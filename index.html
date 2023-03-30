@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mi página principal</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<header>
+		<h1>Mi sitio web</h1>
+	</header>
+	<nav>
+		<ul>
+			<li><a href="./Cairn Generador.html">Cairn: Generador de personajes</a></li>
+			<li><a href="./Location Crafter.html">Location crafter</a></li>
+		</ul>
+	</nav>
+	<main>
+		<h2>Bienvenido a mi sitio web</h2>
+		<p>Esta es mi página principal.</p>
+	</main>
+</body>
+
+<script>
+	const links = document.querySelectorAll('nav a');
+	const main = document.querySelector('main');
+
+	links.forEach(link => {
+		link.addEventListener('click', e => {
+			e.preventDefault();
+			fetch(link.href)
+				.then(response => response.text())
+				.then(html => {
+					main.innerHTML = html;
+				});
+		});
+	});
+</script>
+</html>

@@ -1,0 +1,318 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Generador de personajes aleatorios</title>
+  </head>
+  <body>
+    <h1>Generador de personajes aleatorios</h1>
+    <button onclick="generarPersonaje()">Generar personaje</button>
+    <h2>Personaje generado:</h2>
+    <ul>
+      <li><b>Nombre: </b><span id="nombre"></span></li>
+      <li><b>Apellido: </b><span id="apellido"></span></li>
+      <li><b>Trasfondo: </b><span id="trasfondo"></span></li>
+      <li><b>Fisico: </b><span id="fisico"></span></li>
+      <li><b>Piel: </b><span id="piel"></span></li>
+      <li><b>Cabello: </b><span id="cabello"></span></li>
+      <li><b>Rostro: </b><span id="rostro"></span></li>
+      <li><b>Voz: </b><span id="voz"></span></li>
+      <li><b>Vestimenta: </b><span id="vestimenta"></span></li>
+      <li><b>Virtud: </b><span id="virtud"></span></li>
+      <li><b>Defecto: </b><span id="defecto"></span></li>
+      <li><b>Reputación: </b><span id="reputacion"></span></li>
+      <li><b>Desgracia: </b><span id="desgracia"></span></li>
+      <li><b>FUE: </b><span id="fue"></span></li>
+      <li><b>DES: </b><span id="des"></span></li>
+      <li><b>VOL: </b><span id="vol"></span></li>
+      <li><b>Armadura: </b><span id="armadura"></span></li>
+      <li><b>Yelmos y escudos: </b><span id="yelmosyescudos"></span></li>
+      <li><b>Armas: </b><span id="armas"></span></li>
+      <li><b>Equipo para expediciones: </b><span id="equipoparaexpediciones"></span></li>
+      <li><b>Herramientas: </b><span id="herramientas"></span></li>
+      <li><b>Baratijas: </b><span id="baratijas"></span></li>
+      <li><b>Objetos adicionales: </b><span id="objetosadicionales"></span></li>
+    </ul>
+  </body>
+</html>
+
+<script>
+function generarPersonaje() {
+  // Tirar 3d6 para cada atributo
+  const fue = tirarDados();
+  const des = tirarDados();
+  const vol = tirarDados();
+  const nombre = generarNombre();
+  const apellido = generarApellido();
+  const trasfondo = generarTrasfondo();
+  const fisico = generarFisico();
+  const piel = generarPiel();
+  const cabello = generarCabello();
+  const rostro = generarRostro();
+  const voz = generarVoz();
+  const vestimenta = generarVestimenta();
+  const virtud = generarVirtud();
+  const defecto = generarDefecto();
+  const reputacion = generarReputacion();
+  const desgracia = generarDesgracia();
+  const armadura = generarArmadura();
+  const yelmosyescudos = generarYelmoYEscudo();
+  const armas = generarArma();
+  const equipoparaexpediciones = generarEquipoParaExpediciones();
+  const herramientas = generarHerramienta();
+  const baratijas = generarBaratija();
+  const objetosadicionales= generarObjetosAdicional();
+  
+  // Mostrar los valores en la página
+  document.getElementById("fue").textContent = fue;
+  document.getElementById("des").textContent = des;
+  document.getElementById("vol").textContent = vol;
+  document.getElementById("nombre").textContent = nombre;
+  document.getElementById("apellido").textContent = apellido;
+  document.getElementById("trasfondo").textContent = trasfondo;
+  document.getElementById("fisico").textContent = fisico;
+  document.getElementById("piel").textContent = piel;
+  document.getElementById("cabello").textContent = cabello;
+  document.getElementById("rostro").textContent = rostro;
+  document.getElementById("voz").textContent = voz;
+  document.getElementById("vestimenta").textContent = vestimenta;
+  document.getElementById("virtud").textContent = virtud;
+  document.getElementById("defecto").textContent = defecto;
+  document.getElementById("reputacion").textContent = reputacion;
+  document.getElementById("desgracia").textContent = desgracia;
+  document.getElementById("armadura").textContent = armadura;
+  document.getElementById("yelmosyescudos").textContent = yelmosyescudos;
+  document.getElementById("armas").textContent = armas;
+  document.getElementById("equipoparaexpediciones").textContent = equipoparaexpediciones;
+  document.getElementById("herramientas").textContent = herramientas;
+  document.getElementById("baratijas").textContent = baratijas ;
+  document.getElementById("objetosadicionales").textContent = objetosadicionales;
+}
+
+function tirarDados() {
+  // Generar un número aleatorio entre 1 y 6, 3 veces
+  const dado1 = Math.floor(Math.random() * 6) + 1;
+  const dado2 = Math.floor(Math.random() * 6) + 1;
+  const dado3 = Math.floor(Math.random() * 6) + 1;
+  
+  // Sumar los resultados de los dados
+  const resultado = dado1 + dado2 + dado3;
+  
+  return resultado;
+}
+
+function generarNombre(){
+ const nombres = ["Drelil", "Lirann", "Sybil", "Beatriz", "Elgile", "Lirathil", "Theune", "Breagan", "Esme", "Lisabeth", "Wenain", "Bronwyn", "Griya", "Moralil", "Ygwal", "Cannora", "Henaine", "Morgwen", "Yslen", "Arwel", "Breglor", "Grinwit", "Melnax", "Bevan", "Canhoreal", "Gruwid", "Orthax", "Boroth", "Emrys", "Gruwth", "Triunein", "Borrid", "Ethex", "Gwestin", "Wenlan", "Breagle", "Gringle", "Mannog", "Yirmeor"];
+  const indiceAleatorio = Math.floor(Math.random() * nombres.length);
+  const elementoAleatorio = nombres[indiceAleatorio];
+
+  return elementoAleatorio;
+}
+
+function generarApellido(){
+  const apellidos = ["Abernathy", "Crumwaller", "Harper", "Swinney", "Addercap", "Dunswallow", "Loomer", "Thatcher", "Burl", "Getri", "Malksmilk", "Tolmen", "Candlewick", "Glass", "Smythe", "Weaver", "Cormick", "Harkness", "Sunderman", "Wolder"];
+
+  const indiceAleatorio = Math.floor(Math.random() * apellidos.length);
+  const elementoAleatorio = apellidos[indiceAleatorio];
+
+  return elementoAleatorio;
+}
+
+function generarTrasfondo(){
+  const trasfondos = [ "Alquimista", "Carterista", "Enterrador", "Mago", "Jugador", "Cazador", "Explorador", "Mercader", "Artista", "Clérigo", "Herbolario", "Mercenario", "Carnicero", "Criado", "Herrero", "Minero", "Carpintero", "Criminal", "Ladrón", "Contrabandista"];
+
+  const indiceAleatorio = Math.floor(Math.random() * trasfondos.length);
+  const elementoAleatorio = trasfondos[indiceAleatorio];
+
+  return elementoAleatorio;
+}
+
+function generarFisico(){
+  const fisicos = [ "Atlético", "Flácido", "Bajo", "Gordo", "Enorme", "Larguirucho", "Escuálido", "Musculoso", "Escultural", "Robusto" ];
+
+  const indiceAleatorio = Math.floor(Math.random() * fisicos.length);
+  const elementoAleatorio = fisicos[indiceAleatorio];
+
+  return elementoAleatorio;
+}
+
+function generarPiel(){
+  const pieles = ["Bronceada", "Pigmentada", "Fofa", "Ronchas", "Marcadenacimiento", "Rosácea", "Marcas de viruela", "Tatuada", "Oscura", "Tirante"];
+
+  const indiceAleatorio = Math.floor(Math.random() * pieles.length);
+  const elementoAleatorio = pieles[indiceAleatorio];
+
+  return elementoAleatorio;
+}
+
+function generarCabello(){
+  const cabellos = [ "Abundante", "Largo", "Calvo", "Ondulado", "Encrespado", "Rizado", "Escaso", "Sucio", "Grasiento", "Trenzado"];
+
+  const indiceAleatorio = Math.floor(Math.random() * cabellos.length);
+  const elementoAleatorio = cabellos[indiceAleatorio];
+
+  return elementoAleatorio;
+}
+
+function generarRostro(){
+  const rostros = [ "Afilado", "Desfigurado", "Alargado", "Huesudo", "Cincelado", "Pálido", "Cuadrado", "Perfecto", "De mejillas hundidas", "Ratonil" ];
+
+  const indiceAleatorio = Math.floor(Math.random() * rostros.length);
+  const elementoAleatorio = rostros[indiceAleatorio];
+
+  return elementoAleatorio;
+}
+
+function generarVoz(){
+  const voces = [ "Cavernosa", "Formal", "Clara", "Monótona", "Directa", "Resonante", "Enigmática", "Susurrante", "Estridente", "Tartamuda" ];
+
+  const indiceAleatorio = Math.floor(Math.random() * voces.length);
+  const elementoAleatorio = voces[indiceAleatorio];
+
+  return elementoAleatorio;
+}
+
+
+function generarVestimenta(){
+  const vestimentas = [ "Atlético", "Flácido", "Bajo", "Gordo", "Enorme", "Larguirucho", "Escuálido", "Musculoso", "Escultural", "Robusto" ];
+
+  const indiceAleatorio = Math.floor(Math.random() * vestimentas.length);
+  const elementoAleatorio = vestimentas[indiceAleatorio];
+
+  return elementoAleatorio;
+}
+
+function generarVirtud(){
+  const virtudes = [ "Ambicioso", "Precavido", "Disciplinado", "Sereno", "Honorable", "Sociable", "Humilde", "Tolerante", "Misericordioso", "Valiente" ];
+
+  const indiceAleatorio = Math.floor(Math.random() * virtudes.length);
+  const elementoAleatorio = virtudes[indiceAleatorio];
+
+  return elementoAleatorio;
+}
+
+function generarDefecto(){
+  const defectos = [ "Agresivo", "Mentiroso", "Amargado", "Nervioso", "Avaricioso", "Perezoso", "Codicioso", "Rudo", "Engreído", "Vengativo" ];
+
+  const indiceAleatorio = Math.floor(Math.random() * defectos.length);
+  const elementoAleatorio = defectos[indiceAleatorio];
+
+  return elementoAleatorio;
+}
+
+function generarReputacion(){
+  const reputaciones = ["Ambicioso", "Honrado", "Bicho", "raro", "Patán", "Desagradable", "Peligroso", "Divertido", "Respetado", "Holgazán", "Sabio" ];
+
+  const indiceAleatorio = Math.floor(Math.random() * reputaciones.length);
+  const elementoAleatorio = reputaciones[indiceAleatorio];
+
+  return elementoAleatorio;
+}
+
+function generarDesgracia(){
+  const desgracias = [ "Abandonado", "Degradado", "Adicto", "Desheredado", "Chantajeado", "Desacreditado", "Condenado", "Exiliado", "Defraudado", "Maldito" ];
+
+  const indiceAleatorio = Math.floor(Math.random() * desgracias.length);
+  const elementoAleatorio = desgracias[indiceAleatorio];
+
+  return elementoAleatorio;
+}
+function generarArmadura(){
+
+  const tiradadado = Math.floor(Math.random() * 20) + 1;
+
+  if(tiradadado >= 1 && tiradadado <= 3)
+    return "Ninguna";
+  if(tiradadado >= 4 && tiradadado <= 14)
+    return "Brigantina";
+  if(tiradadado >= 15 && tiradadado <= 19)
+    return "Cota de malla"
+  if(tiradadado === 20)
+    return "Armadura completa";
+  
+  return "Error";
+}
+
+function generarYelmoYEscudo(){
+
+  const tiradadado = Math.floor(Math.random() * 20) + 1;
+
+  if(tiradadado >= 1 && tiradadado <= 13)
+    return "Ninguno";
+  if(tiradadado >= 14 && tiradadado <= 16)
+    return "Yelmo";
+  if(tiradadado >= 17 && tiradadado <= 19)
+    return "Escudo";
+  if(tiradadado === 20)
+    return "Yelmo y escudo";
+  
+  return "Error";
+}
+function generarArma(){
+  const tiradadado = Math.floor(Math.random() * 20) + 1;
+
+  if(tiradadado >= 1 && tiradadado <= 5)
+    return "Daga, garrote o báculo";
+  if(tiradadado >= 6 && tiradadado <= 14)
+    return "Espada, maza o hacha";
+  if(tiradadado >= 15 && tiradadado <= 19)
+    return "Arco largo, ballesta u honda";
+  if(tiradadado === 20)
+    return "Alabarda, martillo de guerra o hacha de batalla";
+  
+  return "Error";
+}
+
+function generarEquipoParaExpediciones(){
+  const equipoParaExpediciones = ["Aceite combustible", "Catalejo", "Pico", "Soga (8 m)", "Amuleto contra espíritus", "Gancho de agarre", "Planta de acónito", "Trampa grande", "Antitoxina", "Ganzúas", "Polea", "Vara (3 m)", "Cadena (3 m)", "Grilletes", "Repelente", "Varita de zahorí", "Carreta (+4 espacio, voluminosa)", "Odre para bucear", "Saco grande", "Yesquero"];
+
+  const indiceAleatorio = Math.floor(Math.random() * equipoParaExpediciones.length);
+  const elementoAleatorio = equipoParaExpediciones[indiceAleatorio];
+
+  return elementoAleatorio;
+}
+
+function generarHerramienta(){
+  const herramientas = [ "Abrojos", "Fuelle", "Pala", "Reloj de arena", "Caña de pescar", "Grasa", "Palanca", "Sellador", "Cincel", "Lima de metal", "Pegamento", "Serrucho", "Clavos", "Martillo", "Pinzas de metal", "Taladro manual", "Cubo", "Olla para cocinar", "Red", "Tiza"];
+
+  const indiceAleatorio = Math.floor(Math.random() * herramientas.length);
+  const elementoAleatorio = herramientas[indiceAleatorio];
+
+  return elementoAleatorio;
+}
+
+function generarBaratija(){
+  const baratijas = [ "Botella", "Cuerno", "Instrumento musical", "Paquete de sal", "Bote de alquitrán", "Dados", "Jabón", "Perfume", "Campanilla", "Espejo", "Joyas falsas", "Pintura facial", "Canicas", "Esponja", "Lupa", "Pluma y tinta", "Cordel", "Incienso", "Mazo de cartas", "Silbato" ];
+
+  const indiceAleatorio = Math.floor(Math.random() * baratijas.length);
+  const elementoAleatorio = baratijas[indiceAleatorio];
+
+  return elementoAleatorio;
+}
+
+function generarObjetosAdicional(){
+  const tiradadado = Math.floor(Math.random() * 20) + 1;
+  console.log(tiradadado);
+  if(tiradadado >= 1 && tiradadado <= 5)
+    return generarHerramienta() + ", " + generarBaratija();
+  if(tiradadado >= 6 && tiradadado <= 13)
+    return generarEquipoParaExpediciones();
+  if(tiradadado >= 14 && tiradadado <= 17)
+    return generarArmadura() + ", " + generarArma();
+  if(tiradadado === 20)
+    return "Libro de hechizos: " + generarLibroDeHechizos();
+  
+  return "Error";
+}
+
+function generarLibroDeHechizos(){
+  const baratijas = [ "Acelerar", "Cosificar", "Hipnotizar", "Oler", "Acelerón primordial", "Curar heridas", "Hogar", "Ordenar", "Adherir", "Desmontar", "Identificar dueño", "Pacificar", "Aire líquido", "Sustituir", "Iluminar", "Portal", "Alterar gravedad", "Detectar magia", "Ilusión auditiva", "Prisión astral", "Amortiguador mágico", "Disfraz", "Ilusión visual", "Proteger", "Ancla", "Dormir", "Imagen especular", "Puerta espejo", "Antropomorfizar", "Elasticidad", "Intercambiar", "Red", "Apagar", "Empujar"/"tirar", "Intercambiar cuerpo", "Repeler", "Arrebatar", "Encantar", "Invocar cubo", "Resbalar", "Artilugio", "Ensordecer", "Invocar espíritu", "Salto", "Atadura invisible", "Escudo", "Invocar ídolo", "Sentir", "Atraer", "Esculpir materia", "Leer mentes", "Señalar objetivo", "Balbucear", "Esfera nocturna", "Levantar osamenta", "Surgencia", "Bengala", "Espectáculo", "Levitar", "Telepatía", "Brazo múltiple", "Espesura", "Machete", "Telequinesis", "Canicas", "Espiar", "Marca de mago", "Teletransportar", "Clasificar", "Flor carnada", "Mascarada", "Terremoto", "Codicia", "Fobia", "Miniaturizar", "Toc-toc", "Comprender", "Forma bestial", "Muro elemental", "Toque helado", "Confundir", "Forma de humo", "Nube de niebla", "Trepar como araña", "Cono de espuma", "Forma de limo", "Objeto animado", "Velo", "Controlar el clima", "Foso", "Odio", "Visión", "Controlar el tiempo", "Frenesí", "Oír susurros", "Visión de rayos X", "Controlar plantas", "Grupo de animales", "Ojo arcano", "Visión verdadera" ];
+
+  const indiceAleatorio = Math.floor(Math.random() * baratijas.length);
+  const elementoAleatorio = baratijas[indiceAleatorio];
+
+  return elementoAleatorio;
+}
+
+
+</script>
