@@ -21,20 +21,4 @@
 		<p>Esta es mi página principal.</p>
 	</main>
 </body>
-
-<script>
-	const links = document.querySelectorAll('nav a');
-	const main = document.querySelector('main');
-
-	links.forEach(link => {
-		link.addEventListener('click', e => {
-			e.preventDefault();
-			fetch(link.href)
-				.then(response => response.text())
-				.then(html => {
-					main.innerHTML = html;
-				});
-		});
-	});
-</script>
 </html>
