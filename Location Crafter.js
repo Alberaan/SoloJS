@@ -3,7 +3,7 @@
       document.getElementById("input-localizacion-pequenya").value = 0;
       document.getElementById("input-encuentros").value = 0;
       document.getElementById("input-objetos").value = 0;
-      document.getElementById("output-exploracion").innerHTML= "";
+      document.getElementById("output-exploracion").value = "";
 
     }
     function explorar() {
@@ -12,7 +12,7 @@
       ppEncuentros = Number(document.getElementById("input-encuentros").value);
       ppObjetos = Number(document.getElementById("input-objetos").value);
       area = "";
-      exploradoTexto = document.getElementById("output-exploracion").innerHTML;
+      exploradoTexto = document.getElementById("output-exploracion").value;
       
       if (exploradoTexto == null){
         exploradoTexto = "";
@@ -80,7 +80,7 @@
       if (ppObjetos < 0){
         ppObjetos = 0;
       }
-      document.getElementById("output-exploracion").innerHTML = area;
+      document.getElementById("output-exploracion").value = area;
       document.getElementById("input-localizacion-grande").value = ppLocalizacionGrande + 1;
       document.getElementById("input-localizacion-pequenya").value = ppLocalizacionPequenya + 1;
       document.getElementById("input-encuentros").value = ppEncuentros + 1;
