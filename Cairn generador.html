@@ -1,41 +1,49 @@
-
 <!DOCTYPE html>
 <html>
-  <a href="./index.html">Home</a>
   <head>
     <title>Generador de personajes aleatorios</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   </head>
   <body>
-    <h1>Generador de personajes aleatorios</h1>
-    <button onclick="generarPersonaje()">Generar personaje</button>
-    <h2>Personaje generado:</h2>
-    <ul>
-      <li><b>Nombre: </b><span id="nombre"></span></li>
-      <li><b>Apellido: </b><span id="apellido"></span></li>
-      <li><b>Trasfondo: </b><span id="trasfondo"></span></li>
-      <li><b>Fisico: </b><span id="fisico"></span></li>
-      <li><b>Piel: </b><span id="piel"></span></li>
-      <li><b>Cabello: </b><span id="cabello"></span></li>
-      <li><b>Rostro: </b><span id="rostro"></span></li>
-      <li><b>Voz: </b><span id="voz"></span></li>
-      <li><b>Vestimenta: </b><span id="vestimenta"></span></li>
-      <li><b>Virtud: </b><span id="virtud"></span></li>
-      <li><b>Defecto: </b><span id="defecto"></span></li>
-      <li><b>Reputación: </b><span id="reputacion"></span></li>
-      <li><b>Desgracia: </b><span id="desgracia"></span></li>
-      <li><b>FUE: </b><span id="fue"></span></li>
-      <li><b>DES: </b><span id="des"></span></li>
-      <li><b>VOL: </b><span id="vol"></span></li>
-      <li><b>Armadura: </b><span id="armadura"></span></li>
-      <li><b>Yelmos y escudos: </b><span id="yelmosyescudos"></span></li>
-      <li><b>Armas: </b><span id="armas"></span></li>
-      <li><b>Equipo para expediciones: </b><span id="equipoparaexpediciones"></span></li>
-      <li><b>Herramientas: </b><span id="herramientas"></span></li>
-      <li><b>Baratijas: </b><span id="baratijas"></span></li>
-      <li><b>Objetos adicionales: </b><span id="objetosadicionales"></span></li>
-    </ul>
+
+	<header>
+		<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+		  <a class="navbar-brand" href="#">SoloJS</a>
+    </nav>
+	</header>
+
+    <div class="container">
+      <a href="./index.html">Home</a>
+      <h1>Generador de personajes aleatorios</h1>
+      <button class="btn btn-primary" onclick="generarPersonaje()">Generar personaje</button>
+      <h2>Personaje generado:</h2>
+      <ul class="list-unstyled">
+        <li><b>Nombre: </b><span id="nombre"></span></li>
+        <li><b>Apellido: </b><span id="apellido"></span></li>
+        <li><b>Trasfondo: </b><span id="trasfondo"></span></li>
+        <li><b>Fisico: </b><span id="fisico"></span></li>
+        <li><b>Piel: </b><span id="piel"></span></li>
+        <li><b>Cabello: </b><span id="cabello"></span></li>
+        <li><b>Rostro: </b><span id="rostro"></span></li>
+        <li><b>Voz: </b><span id="voz"></span></li>
+        <li><b>Vestimenta: </b><span id="vestimenta"></span></li>
+        <li><b>Virtud: </b><span id="virtud"></span></li>
+        <li><b>Defecto: </b><span id="defecto"></span></li>
+        <li><b>Reputación: </b><span id="reputacion"></span></li>
+        <li><b>Desgracia: </b><span id="desgracia"></span></li>
+        <li><b>FUE: </b><span id="fue"></span></li>
+        <li><b>DES: </b><span id="des"></span></li>
+        <li><b>VOL: </b><span id="vol"></span></li>
+        <li><b>Armadura: </b><span id="armadura"></span></li>
+        <li><b>Yelmos y escudos: </b><span id="yelmosyescudos"></span></li>
+        <li><b>Armas: </b><span id="armas"></span></li>
+        <li><b>Equipo para expediciones: </b><span id="equipoparaexpediciones"></span></li>
+        <li><b>Herramientas: </b><span id="herramientas"></span></li>
+        <li><b>Baratijas: </b><span id="baratijas"></span></li>
+        <li><b>Objetos adicionales: </b><span id="objetosadicionales"></span></li>
+      </ul>
+    </div>
+    <script src="Cairn generador tablas.js"> </script>
+    <script src="Cairn generador.js"> </script>
   </body>
 </html>
-
-<script src="Cairn generador tablas.js"> </script>
-<script src="Cairn generador.js"> </script>
