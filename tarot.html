@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<head>
+	<title>Imagen aleatoria</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<style type="text/css">
+		.container {
+			margin-top: 20px;
+		}
+	</style>
+</head>
+<body onload="rellenarCombos()">
+	<header>
+		<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+		  <a class="navbar-brand" href="#">SoloJS</a>
+		</nav>
+	</header>
+  <h1>Cartas de Tarot</h1>
+	<div class="container">
+		<div class="row">
+			<div class="col-4 mb-3">
+        <h2>Carta robada</h2>
+        <img id="imagen" src="./Cartas/Cups09.jpg" alt="" style="transform: rotate(0deg);">
+        <br>
+				<button class="btn btn-primary" onclick="cargarImagen()">Robar carta</button>
+			</div>
+			<div class="col-md-12">
+				<div class="row">
+					<div class="col-md-4">
+            <h2>Personaje 1</h2>
+						<img id="imagen1" src="./Cartas/00-TheFool.jpg">
+					<select id="combo-jugador-1" class="form-control" onchange="cambiarImagenSeleccionada(this.value, 'imagen1')">
+						</select></div>
+
+					<div class="col-md-4">
+            <h2>Personaje 2</h2>
+						<img id="imagen2" src="./Cartas/00-TheFool.jpg">
+					<select id="combo-jugador-2" class="form-control" onchange="cambiarImagenSeleccionada(this.value, 'imagen2')">
+						</select></div>
+
+					<div class="col-md-4">
+            <h2>Personaje 3</h2>
+						<img id="imagen3" src="./Cartas/00-TheFool.jpg">
+					<select id="combo-jugador-3" class="form-control" onchange="cambiarImagenSeleccionada(this.value, 'imagen3')">
+						</select></div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-4">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+    <script src="tarot.js"> </script>
+    <script src="tarot tablas.js"> </script>
+
+</body>
