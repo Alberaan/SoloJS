@@ -12,7 +12,7 @@ function cargarImagen() {
   const image = document.getElementById("imagen");
   image.src = rutaImagen[0];
   document.getElementById("imagen").src = rutaImagen;
-  document.getElementById("significado-robada").innerHTML = "Significado: " + carta[1];
+  document.getElementById("significado-robada").innerHTML = "<b>Significado:</b> " + carta[1];
 
   const debeRotar = Math.floor(Math.random() * 2);
 
@@ -65,5 +65,5 @@ function cambiarImagenSeleccionada(combobox, nombreImagen, significadoJugador){
   const imagen = document.getElementById(nombreImagen);
   imagen.src = "./Cartas/" + combobox;
 
-  document.getElementById(significadoJugador).innerHTML = "Significado: " + obtenerSignificado(combobox);
+  document.getElementById(significadoJugador).innerHTML = "<b>Significado:</b> " + obtenerSignificado(combobox);
 }

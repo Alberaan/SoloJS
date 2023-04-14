@@ -22,12 +22,31 @@
   <h1>Oraculo Tarot</h1>
 	<div class="container">
 		<div class="row">
-			<div class="col-12 mb-3">
+			<div class="col-6 mb-3">
         <h2>Carta robada</h2>
         <img id="imagen" src="./Cartas/Cups09.jpg" alt="" style="transform: rotate(0deg);">
         <br>
 				<button class="btn btn-primary" onclick="cargarImagen()">Robar carta</button>
-        <h3 id="significado-robada">Significado: </h3>
+        <h3 id="significado-robada"><b>Significado:</b> </h3>
+			</div>
+			<div class="col-6 mb-3">
+        <h2>Notas: </h2>
+        <h3>Durante SI/NO: </h3>
+        <a>
+          <b>Arcano mayor:</b> evento aleatorio.<br>
+          <b>Sota:</b> existe algo en la cercanía que es más pequeño de lo habitual.<br>
+          <b>Caballo:</b> algo en la cercanía está cambiando o en movimiento.<br>
+          <b>Reina:</b> tu personaje sospecha que hay algo oculto o extraño en la cercanía.<br>
+          <b>Rey:</b> existe algo en la cercanía que es más grande de lo habitual.<br>
+        </a>
+        <h3>Durante evento: </h3>
+        <a>
+          <b>Arcano mayor:</b> afecta al personaje del jugador. <br>
+          <b>Bastos:</b> afecta a un nuevo personaje no jugador, trama o localización. Elige la que más te sugiera la carta.<br>
+          <b>Copas:</b> afecta a un personaje no jugador ya conocido. Elige una aleatoriamente del listado de personajes no jugadores.<br>
+          <b>Espadas:</b> afecta a una de las tramas. Elige una aleatoriamente del listado de tramas.<br>
+          <b>Oros:</b> afecta a una localización. Elige una aleatoriamente del listado de localizaciones.<br>
+        </a>
 			</div>
 			<div class="col-md-12">
 				<div class="row">
@@ -37,7 +56,7 @@
 					<select id="combo-jugador-1" class="form-control" onchange="cambiarImagenSeleccionada(this.value, 'imagen1', 'significado-jugador1')">
 					</select>
 
-          <a id="significado-jugador1">Significado: </a>
+          <a id="significado-jugador1"><b>Significado:</b> </a>
           </div>
 
 					<div class="col-md-4">
@@ -45,7 +64,7 @@
 						<img id="imagen2" src="./Cartas/00-TheFool.jpg">
 					<select id="combo-jugador-2" class="form-control" onchange="cambiarImagenSeleccionada(this.value, 'imagen2', 'significado-jugador2')">
 						</select>
-          <a id="significado-jugador2">Significado: </a>
+            <a id="significado-jugador2"><b>Significado:</b> </a>
           </div>
 
 					<div class="col-md-4">
@@ -53,7 +72,7 @@
 						<img id="imagen3" src="./Cartas/00-TheFool.jpg">
 					<select id="combo-jugador-3" class="form-control" onchange="cambiarImagenSeleccionada(this.value, 'imagen3', 'significado-jugador3')">
 						</select>
-          <a id="significado-jugador3">Significado: </a>
+            <a id="significado-jugador3"><b>Significado:</b> </a>
           </div>
 				</div>
 
