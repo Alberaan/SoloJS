@@ -22,31 +22,39 @@
   <h1>Oraculo Tarot</h1>
 	<div class="container">
 		<div class="row">
-			<div class="col-4 mb-3">
+			<div class="col-12 mb-3">
         <h2>Carta robada</h2>
         <img id="imagen" src="./Cartas/Cups09.jpg" alt="" style="transform: rotate(0deg);">
         <br>
 				<button class="btn btn-primary" onclick="cargarImagen()">Robar carta</button>
+        <h3 id="significado-robada">Significado: </h3>
 			</div>
 			<div class="col-md-12">
 				<div class="row">
 					<div class="col-md-4">
             <h2>Personaje 1</h2>
 						<img id="imagen1" src="./Cartas/00-TheFool.jpg">
-					<select id="combo-jugador-1" class="form-control" onchange="cambiarImagenSeleccionada(this.value, 'imagen1')">
-						</select></div>
+					<select id="combo-jugador-1" class="form-control" onchange="cambiarImagenSeleccionada(this.value, 'imagen1', 'significado-jugador1')">
+					</select>
+
+          <a id="significado-jugador1">Significado: </a>
+          </div>
 
 					<div class="col-md-4">
             <h2>Personaje 2</h2>
 						<img id="imagen2" src="./Cartas/00-TheFool.jpg">
-					<select id="combo-jugador-2" class="form-control" onchange="cambiarImagenSeleccionada(this.value, 'imagen2')">
-						</select></div>
+					<select id="combo-jugador-2" class="form-control" onchange="cambiarImagenSeleccionada(this.value, 'imagen2', 'significado-jugador2')">
+						</select>
+          <a id="significado-jugador2">Significado: </a>
+          </div>
 
 					<div class="col-md-4">
             <h2>Personaje 3</h2>
 						<img id="imagen3" src="./Cartas/00-TheFool.jpg">
-					<select id="combo-jugador-3" class="form-control" onchange="cambiarImagenSeleccionada(this.value, 'imagen3')">
-						</select></div>
+					<select id="combo-jugador-3" class="form-control" onchange="cambiarImagenSeleccionada(this.value, 'imagen3', 'significado-jugador3')">
+						</select>
+          <a id="significado-jugador3">Significado: </a>
+          </div>
 				</div>
 
 				<div class="row">

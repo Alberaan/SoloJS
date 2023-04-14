@@ -5,18 +5,18 @@ function cargarImagen() {
   
   carta = obtenerCartaAleatoria();
   // Construye la ruta de la imagen utilizando el número aleatorio
-  var rutaImagen = "./Cartas/" + carta;
+  var rutaImagen = "./Cartas/" + carta[0];
   
   // Actualiza la fuente de la imagen en la página HTML
   //const image = document.getElementById("imagen").src = rutaImagen;
   const image = document.getElementById("imagen");
-  image.src = rutaImagen;
+  image.src = rutaImagen[0];
   document.getElementById("imagen").src = rutaImagen;
+  document.getElementById("significado-robada").innerHTML = "Significado: " + carta[1];
 
   const debeRotar = Math.floor(Math.random() * 2);
 
   if (debeRotar === 1){
-    console.log(debeRotar);
     image.style.transform = 'rotate(180deg)';
     return;
   }
@@ -42,9 +42,9 @@ function rellenarCombos(){
     const option2 = document.createElement("option");
     const option3 = document.createElement("option");
     //optionElement.value = option;
-    option1.text = element;
-    option2.text = element;
-    option3.text = element;
+    option1.text = element[0];
+    option2.text = element[0];
+    option3.text = element[0];
 
     select1.add(option1);
     select2.add(option2);
@@ -52,9 +52,18 @@ function rellenarCombos(){
   });
 }
 
-function cambiarImagenSeleccionada(combobox, nombreImagen){
-  //const combobox = document.getElementById(combobox);
+function obtenerSignificado(nombreCarta){
+  for (let i = 0; i < tablaTarot.length; i++){
+    if (tablaTarot[i][0] === nombreCarta){
+      return tablaTarot[i][1];
+    }
+  }
+  return "Error";
+};
+
+function cambiarImagenSeleccionada(combobox, nombreImagen, significadoJugador){
   const imagen = document.getElementById(nombreImagen);
   imagen.src = "./Cartas/" + combobox;
-  console.log(imagen.src)
+
+  document.getElementById(significadoJugador).innerHTML = "Significado: " + obtenerSignificado(combobox);
 }
