@@ -74,13 +74,9 @@ function cargarSistemas(){
 }
 
 function generarTablaAleatoria(tabla) {
-  const numeroAleatorio = Math.floor(Math.random() * tabla.length) + 1;
+  const numeroAleatorio = Math.floor(Math.random() * tabla.length);
+  console.log(tabla.length + " " + numeroAleatorio)
   return tabla[numeroAleatorio];
-  for (const rango of tabla) {
-    if (numeroAleatorio >= rango[0] && numeroAleatorio <= rango[1]) {
-      return rango[2];
-    }
-  }
 }
 
 function obtenerElementoAleatorio(){
@@ -91,9 +87,19 @@ function obtenerElementoAleatorio(){
   elementos = elementos.filter(item => item);
   elementoAleatorio = generarTablaAleatoria(elementos);
 
-  stringAdevolver = resultadoTextarea.value + "\n\n" + elementoAleatorio;
+  if (elementoAleatorio == "undefined"){
+    console.log("ble");
+  }
+
+  stringAdevolver = resultadoTextarea.value + elementoAleatorio + "\n";
 
   resultadoTextarea.value = stringAdevolver;
   var textarea = document.getElementById("resultado");
   textarea.scrollTop = textarea.scrollHeight;
+}
+
+function resetResultados(){
+  const resultadoTextarea = document.getElementById('resultado');
+  resultadoTextarea.value = "";
+
 }
