@@ -1,0 +1,36 @@
+Conductor de taxi 
+Electricista
+Carnicero 
+Trabajador de comida rápida
+Empleado de ventas 
+Vigilante de juegos
+Guía turístico 
+Profesor
+Veterinario 
+Historiador
+Camarero 
+Médico de calle
+Diseñador de juegos indie 
+Manitas de cocina
+Escritor 
+Bibliotecario
+Repartidor 
+Hacker
+Barista 
+Músico
+Conductor de autobús 
+Matemático
+Seguridad privada 
+Enfermero/a
+Ingeniero 
+Farmacéutico
+Cocinero 
+Radiólogo
+Cobrador de deudas 
+Inspector de seguridad
+Pandillero 
+Conductor de tren
+Dentista 
+Conductor de camiones
+Limpiador 
+Motero

@@ -1,0 +1,50 @@
+Programador 
+Ex-convicto 
+Sacerdote 
+Cyborg 
+Científico 
+Cazador de recompensas 
+Especialista en tecnología 
+Soldado 
+Ladrón 
+Artista 
+Artista 
+Medios de comunicación 
+Diseñador 
+Desempleado 
+Niño 
+Conductor 
+Cartero
+Fixer
+Fanático/Extremista
+Mensajero 
+Contrabandista 
+Celebridad 
+Clon 
+Policía 
+Junkie 
+Prostituta 
+Animal inteligente 
+Falsificador 
+Miembro de una banda callejera 
+Matón 
+Sintético 
+Propietario de un negocio 
+Aristócrata corporativo 
+Agente 
+Mafioso
+Proxeneta 
+Hacker 
+Solo o Mercenario 
+Concubina 
+Inteligencia Artificial 
+Indigente 
+Nómada 
+Revolucionario 
+Doctor 
+Jefe de sindicato 
+Psiquiatra 
+Carroñero 
+Traficante de drogas 
+Asesor de imagen 
+Traficante de personas

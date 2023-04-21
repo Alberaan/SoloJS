@@ -1,0 +1,41 @@
+Ciudad_calle_caracteristicas.txt
+Ciudad_edificio_caracteristicas.txt
+Ciudad_eventos.txt
+Ciudad_olores.txt
+Ciudad_sonidos.txt
+Ciudad_tema.txt
+Ciudad_tema_barrio.txt
+Ciudad_tema_barrio_pobre_localizaciones.txt
+Ciudad_tema_barrio_rico_localizaciones.txt
+Ciudad_visiones.txt
+Cualidades negativas personas.txt
+Detalle fisico.txt
+Edificios.txt
+Facciones_activos.txt
+Facciones_caracteristicas.txt
+Facciones_medios.txt
+Facciones_motivaciones.txt
+Facciones_problemas.txt
+Facciones_tema.txt
+Job2_accion.txt
+Job2_hook.txt
+Job2_objetivo.txt
+Job2_oposicion_1.txt
+Job2_oposicion_2.txt
+Job_accion_objetos.txt
+Job_accion_persona.txt
+Job_clientes.txt
+Job_objetivo_objetos.txt
+Job_objetivo_persona.txt
+Job_quiere.txt
+Medios personas.txt
+Motivaciones.txt
+Personalidad.txt
+Problemas personas.txt
+Profesiones clase alta.txt
+Profesiones clase baja.txt
+Que llevan.txt
+Rasgos personas.txt
+Trabajo_accion.txt
+Trabajo_cliente.txt
+Trabajo_complicacion.txt

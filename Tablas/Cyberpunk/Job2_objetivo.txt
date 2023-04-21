@@ -1,0 +1,6 @@
+Grupo - Megacorp , Pandilla, Activistas, Otra tripulación
+Arte - Arte, Antigüedad, Disco duro, Cura
+Prototipo - Arma, IA, Vehículo, Cyberware
+VIP - Celebridad, Ejecutivo de Megacorp, Político, Élite orbital, Líder de pandilla
+Datos - Investigación, Pruebas, Algo escandaloso
+Persona de interés - Espía, Miembro de la familia, Científico, Reportero, Denunciante
