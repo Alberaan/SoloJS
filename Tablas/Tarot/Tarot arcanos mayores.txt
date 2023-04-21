@@ -1,0 +1,44 @@
+El Loco: confianza, inocencia, mente abierta, comienzo, instinto
+El Mago: poder personal, intención, voluntad, inventinva
+La Sacerdotisa: sabiduría interior, receptividad, espiritualidad, meditación
+La Emperatriz: criar, creatividad, sensualidad, madre
+El Emperador: poder, estructura, estabilidad, autoridad, padre
+El Hierofante: maestro, sistema de creencias, conocimiento, concienzudo, responsabilidad
+Los Amantes: amor, unión, cooperación, elección, sexualidad
+El Carro: impulso, competencia, auto-disciplina, control, determinación
+Fuerza: impulsos instintivos, fuerza interior, supervivencia, coraje
+El Ermitaño: soledad, introspección, perspectiva, sabiduría, guía
+Rueda De La Fortuna: pasar a la acción, cambio, movimiento, destino, suerte, expansión
+Justicia: justicia, balance, ética, ley, responsabilidad
+El Colgado: rendirse, nueva perspectiva, espera, sacrificio, liberación
+Muerte: transformación, fin, conclusión, regeneración
+Templanza: combinando, creando, compromiso, experimentación
+El Diablo: apegos, restricciones, compromiso, limitaciones
+La Torre: conmoción repentina, destrucción, cuestionarse las creencias, caos
+La Estrella: optimismo, renovación, sin límites, paz, astrología
+La Luna: lo inconsciente, la parte oscura de ser, confusión, sueños, intuición
+El Sol: entusiasmo, alegría, claridad, crecimiento personal, auto-aceptación
+Juicio: rito iniciático, madurar, revisión, transición
+El Mundo: integración, completitud, opciones, totalidad, la Tierra, conexión
+El Loco (invertido): confianza, inocencia, mente abierta, comienzo, instinto
+El Mago (invertido): poder personal, intención, voluntad, inventinva
+La Sacerdotisa (invertido): sabiduría interior, receptividad, espiritualidad, meditación
+La Emperatriz (invertido): criar, creatividad, sensualidad, madre
+El Emperador (invertido): poder, estructura, estabilidad, autoridad, padre
+El Hierofante (invertido): maestro, sistema de creencias, conocimiento, concienzudo, responsabilidad
+Los Amantes (invertido): amor, unión, cooperación, elección, sexualidad
+El Carro (invertido): impulso, competencia, auto-disciplina, control, determinación
+Fuerza (invertido): impulsos instintivos, fuerza interior, supervivencia, coraje
+El Ermitaño (invertido): soledad, introspección, perspectiva, sabiduría, guía
+Rueda De La Fortuna (invertido): pasar a la acción, cambio, movimiento, destino, suerte, expansión
+Justicia (invertido): justicia, balance, ética, ley, responsabilidad
+El Colgado (invertido): rendirse, nueva perspectiva, espera, sacrificio, liberación
+Muerte (invertido): transformación, fin, conclusión, regeneración
+Templanza (invertido): combinando, creando, compromiso, experimentación
+El Diablo (invertido): apegos, restricciones, compromiso, limitaciones
+La Torre (invertido): conmoción repentina, destrucción, cuestionarse las creencias, caos
+La Estrella (invertido): optimismo, renovación, sin límites, paz, astrología
+La Luna (invertido): lo inconsciente, la parte oscura de ser, confusión, sueños, intuición
+El Sol (invertido): entusiasmo, alegría, claridad, crecimiento personal, auto-aceptación
+Juicio (invertido): rito iniciático, madurar, revisión, transición
+El Mundo (invertido): integración, completitud, opciones, totalidad, la Tierra, conexión

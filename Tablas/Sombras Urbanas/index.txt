@@ -1,0 +1,17 @@
+Apellidos.txt
+Arquetipos.txt
+Lugares.txt
+Motivaciones.txt
+Movimientos_del_maestro_de_ceremonias.txt
+Movimientos_del_poder.txt
+Movimientos_del_velo.txt
+Movimientos_de_la_mortalidad.txt
+Movimientos_de_la_noche.txt
+Movimientos_de_maniobras_politicas.txt
+Movimientos_de_pasion.txt
+Movimientos_de_revoluciones.txt
+Movimientos_de_ritual.txt
+Movimientos_de_territorio.txt
+Nombres.txt
+Obligaciones_fundamentales.txt
+Peligros.txt

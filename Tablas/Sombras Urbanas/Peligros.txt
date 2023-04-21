@@ -1,0 +1,25 @@
+Revolución | Idealismo (Impulso: ansía sacrificio, propio o ajeno).
+Revolución | Revuelta (Impulso: ansía justicia, rápida y sangrienta).
+Revolución | Huelga (Impulso: ansía respeto y seguridad).
+Revolución | Turba (Impulso: ansía violencia y ver sus deseos saciados).
+Revolución | Plaga (Impulso: ansía aceptación).
+Maniobra política | Golpe de estado (Impulso: robar el poder en momentos de debilidad).
+Maniobra política | Finta (Impulso: dejar a un enemigo al descubierto).
+Maniobra política | Alianza (Impulso: satisfacer a otro para ganarse su favor).
+Maniobra política | Anexión (Impulso: conseguir control sobre otros).
+Maniobra política | Sabotaje (Impulso: crear y explotar debilidades).
+Pasión | Venganza (Impulso: atacar sin previo aviso).
+Pasión | Amor (Impulso: proteger).
+Pasión | Belleza (Impulso: sacrificar).
+Pasión | Rabia (Impulso: tratar con injusticia y causar dolor).
+Pasión | Envidia (Impulso: tomar más de lo que le corresponde).
+Ritual | Robo (Impulso: quitarle algo a otro).
+Ritual | Contención (Impulso: capturar y retener).
+Ritual | Destrucción (Impulso: causar muerte y ruina).
+Ritual | Vínculo (Impulso: crear puentes y conexiones).
+Ritual | Restauración (Impulso: curar y arreglar).
+Territorio | Erupción (Impulso: quemar o consumir).
+Territorio | Ilusión (Impulso: tentar y cautivar).
+Territorio | Fortaleza (Impulso: negar la entrada).
+Territorio | Expansión (Impulso: crear y multiplicarse).
+Territorio | Atolladero (Impulso: capturar y apresar).

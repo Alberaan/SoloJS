@@ -1,0 +1,2 @@
+Tarot arcanos mayores.txt
+Tarot todas.txt

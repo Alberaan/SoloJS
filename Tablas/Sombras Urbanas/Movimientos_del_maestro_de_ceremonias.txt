@@ -1,0 +1,14 @@
+Saca a relucir un conflicto, ya sea antiguo o nuevo.
+Pon en peligro a alguien.
+Haz daño (o intercámbialo).
+Ofrece una oportunidad con un coste.
+Revela un trato hecho en ausencia de los personajes.
+Vuelve un movimiento suyo en su contra.
+Ofréceles o reclámales una Deuda.
+Moviliza recursos para cambiar las probabilidades.
+Avisa a alguien del peligro que se cierne.
+Bloquea, explota o reclama un lugar poderoso.
+Di las consecuencias y pregunta.
+Activa las desventajas de sus cosas.
+Haz un movimiento de Peligro o Facción.
+Después de cada movimiento: «¿Qué haces?».
