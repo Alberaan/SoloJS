@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Seleccionar Sistema y Fichero con Listbox</title>
+  <!-- Incluir los estilos de Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+<body onload="cargarDatos()">
+	<header>
+		<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+		  <a class="navbar-brand" href="index.html">SoloJS</a>
+		</nav>
+	</header>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h4>Seleccionar Sistema:</h4>
+        <select id="sistemas" multiple class="form-control">
+        </select>
+      </div>
+      <div class="col-md-4">
+        <h4>Seleccionar tabla:</h4>
+        <select id="ficheros" multiple class="form-control">
+        </select>
+      </div>
+      <div class="col-md-4">
+        <h4>Contenido tabla:</h4>
+        <textarea id="contenido" class="form-control" rows="5"></textarea>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <h4>Resultado aleatorio:</h4>
+        <textarea id="resultado" class="form-control" rows="5"></textarea>
+        <button onclick="obtenerElementoAleatorio()" class="btn btn-primary">Obtener elemento aleatorio</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Incluir jQuery y los scripts de Bootstrap -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="./tablas aleatorias default.json"></script>
+  <script src="./tablas aleatorias.js"></script>
+
+</body>
+</html>
