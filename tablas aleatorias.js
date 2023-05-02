@@ -11,30 +11,43 @@ function cargarDatosDefault(){
 
 function rellenarBotones(){
   const containerBotones = document.getElementById('botones');
+  const sistemaSelect = document.getElementById('filtro-sistemas-combo');
+  const filtroTexto = document.getElementById('filtro-sistemas-texto');
+  const sistemaSeleccionado = Array.from(sistemaSelect.selectedOptions).map(option => option.value)[0];
   cont = 0;
   var row = document.createElement('div');
+  var rowAux = document.createElement('div');
   row.className = 'row mt-3';
 
-  for (const sistema of datos.sistemas){
-    for (const fichero of sistema.ficheros){
-      btn = crearBoton(sistema, fichero);
-      var col1 = document.createElement('div');
-      col1.className = 'col-md-3';
-      col1.appendChild(btn);
-      
-      //containerBotones.appendChild(btn);
+  containerBotones.innerHTML = null;
 
-      if(cont === 0){
-        containerBotones.appendChild(row);
-        var row = document.createElement('div');
-        row.className = 'row mt-3';
-      }
-      row.appendChild(col1);
-      cont++;
-      if (cont >= 4){
-        cont = 0;
+  for (const sistema of datos.sistemas){
+    if(sistema.nombre === sistemaSeleccionado || sistemaSeleccionado === "Todos"){
+      if(sistema.nombre.includes(filtroTexto.value)){
+        for (const fichero of sistema.ficheros){
+          btn = crearBoton(sistema, fichero);
+          var col1 = document.createElement('div');
+          col1.className = 'col-md-3';
+          col1.appendChild(btn);
+
+          if(cont === 0){
+            containerBotones.appendChild(row);
+            var rowAux = document.createElement('div');
+            row = rowAux;
+            row.className = 'row mt-3';
+          }
+          row.appendChild(col1);
+          cont++;
+
+          if (cont >= 4){
+            cont = 0;
+          }
+        }
       }
     }
+
+  containerBotones.appendChild(row);
+
   }
 }
 
@@ -57,12 +70,20 @@ function botonClickado(sistema, fichero){
 function cargarDatosNavegador(){
   return JSON.parse(localStorage.getItem("datos_sistemas"));
 }
+function testCambioTexto(){
+  const sistemaFiltroTexto = document.getElementById('filtro-sistemas-texto');
+  console.log("Hello");
+}
 
 function cargarDatos() {
   const sistemaSelect = document.getElementById('sistemas');
   const ficheroSelect = document.getElementById('ficheros');
+  const sistemaFiltroSelect = document.getElementById('filtro-sistemas-combo');
+  const sistemaFiltroTexto = document.getElementById('filtro-sistemas-texto');
   sistemaSelect.addEventListener('change', clickSistemas);
   ficheroSelect.addEventListener('change', clickFicheros);
+  sistemaFiltroSelect.addEventListener('change', rellenarBotones);
+  //sistemaFiltroTexto.addEventListener('keypress', rellenarBotones);
   cargarSistemas();
 }
 
@@ -109,13 +130,24 @@ function clickFicheros(){
 
 function cargarSistemas(){
   const sistemasElement = document.getElementById("sistemas");
+  const sistemasFiltrosElement = document.getElementById("filtro-sistemas-combo");
 
   for (const sistema of datos.sistemas) {
     const option = document.createElement("option");
     option.value = sistema.nombre;
     option.textContent = sistema.nombre;
     sistemasElement.appendChild(option);
+
+    const optionFiltro = document.createElement("option");
+    optionFiltro.value = sistema.nombre;
+    optionFiltro.textContent = sistema.nombre;
+    sistemasFiltrosElement.appendChild(optionFiltro);
   }
+
+    const optionFiltro = document.createElement("option");
+    optionFiltro.value = "Todos";
+    optionFiltro.textContent = "Todos";
+    sistemasFiltrosElement.appendChild(optionFiltro);
 
 }
 
@@ -155,10 +187,6 @@ function obtenerElementoAleatorioBoton(sistemaSeleccionado, ficheroSeleccionado)
   elementos = contenidoTabla.split("\n");
   elementos = elementos.filter(item => item);
   elementoAleatorio = generarTablaAleatoria(elementos);
-
-  if (elementoAleatorio == "undefined"){
-    console.log("ble");
-  }
 
   stringAdevolver = resultadoTextarea.value + elementoAleatorio + "\n";
 
