@@ -7,33 +7,46 @@ cargarDatos();
 rellenarBotones();
 
 function cargarTablasDefault(){
-  var texto = fetch('./Tablas/index.txt')
-    .then(function(response) {
-      return response.text().split("\n");
-    })
-    .then(function(data) {
-      console.log(data);
-    })
-    .catch(function(error) {
-      console.error(error);
-    });
-  sistemas = texto;
+  var request = new XMLHttpRequest();
+  texto = "";
+
+  request.open('GET', './index.txt', false);
+  request.send(null);
+  
+  if (request.status === 200) {
+    console.log(request.responseText);
+    texto = request.responseText;
+  } else {
+    console.error(request.status);
+    return;
+  }
+  sistemas = texto.split("\n");
 
   for (sistema of sistemas){
-    console.log(sistema);
-    var ficherosSistema = fetch('./Tablas/' + sistema + '/index.txt')
-      .then(function(response) {
-        return response.text();
-      })
-      .then(function(data) {
-        console.log(data);
-      })
-      .catch(function(error) {
-        console.error(error);
-      });
-
-    ficheros = ficherosSistema.split("\n");
-    console.log(ficheros);
+    request.open('GET', './' + sistema.replace(".txt", "") + '/index.txt', false);
+    request.send(null);
+    
+    if (request.status === 200) {
+      console.log(request.responseText);
+      texto = request.responseText;
+    } else {
+      console.error(request.status);
+      return;
+    }
+    ficheros = texto.split("\n");
+    for (sistema of sistemas){
+      request.open('GET', './' + sistema.replace(".txt", "") + '/index.txt', false);
+      request.send(null);
+      
+      if (request.status === 200) {
+        console.log(request.responseText);
+        texto = request.responseText;
+      } else {
+        console.error(request.status);
+        return;
+      }
+      contenido = texto;
+    }
   }
 }
 
