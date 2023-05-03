@@ -35,7 +35,7 @@ function cargarTablasDefault(){
     }
     ficheros = texto.split("\n");
     for (sistema of sistemas){
-      request.open('GET', './Tablas/' + sistema.replace(".txt", "") + '/index.txt', false);
+      request.open('GET', './Tablas/' + sistema.replace(".txt", "") + '/' + fichero, false);
       request.send(null);
       
       if (request.status === 200) {
