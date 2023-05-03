@@ -9,7 +9,17 @@ rellenarBotones();
 function cargarTablasDefault(){
   var request = new XMLHttpRequest();
   texto = "";
+  
+  sistemas = cargarTablasDefaultSistemas();
+  for (sistema of sistemas){
+    ficheros = cargarTablasDefaultFicheros(sistema);
+    for (fichero of ficheros){
+      contenido = cargarTablasDefaultContenido(sistema, fichero);
+    }
+  }
+}
 
+function cargarTablasDefaultSistemas(){
   request.open('GET', './Tablas/index.txt', false);
   request.send(null);
   
@@ -21,33 +31,38 @@ function cargarTablasDefault(){
     return;
   }
   sistemas = texto.split("\n");
-
-  for (sistema of sistemas){
-    request.open('GET', './Tablas/' + sistema.replace(".txt", "") + '/index.txt', false);
-    request.send(null);
-    
-    if (request.status === 200) {
-      console.log(request.responseText);
-      texto = request.responseText;
-    } else {
-      console.error(request.status);
-      return;
-    }
-    ficheros = texto.split("\n");
-    for (fichero of ficheros){
-      request.open('GET', './Tablas/' + sistema.replace(".txt", "") + '/' + fichero, false);
-      request.send(null);
-      
-      if (request.status === 200) {
-        console.log(request.responseText);
-        texto = request.responseText;
-      } else {
-        console.error(request.status);
-        return;
-      }
-      contenido = texto;
-    }
+  sistemas = sistemas.filter(e => e != "index.txt");
+  return sistemas;
+}
+function cargarTablasDefaultFicheros(sistema){
+  request.open('GET', './Tablas/' + sistema.replace(".txt", "") + '/index.txt', false);
+  request.send(null);
+  
+  if (request.status === 200) {
+    console.log(request.responseText);
+    texto = request.responseText;
+  } else {
+    console.error(request.status);
+    return;
   }
+  ficheros = texto.split("\n");
+  ficheros = ficheros.filter(e => e != "index.txt");
+  return ficheros;
+}
+
+function cargarTablasDefaultContenido(sistema, fichero){
+  request.open('GET', './Tablas/' + sistema.replace(".txt", "") + '/' + fichero, false);
+  request.send(null);
+  
+  if (request.status === 200) {
+    console.log(request.responseText);
+    texto = request.responseText;
+  } else {
+    console.error(request.status);
+    return;
+  }
+  contenido = texto;
+  return contenido;
 }
 
 function cargarDatosDefault(){
