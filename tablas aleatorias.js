@@ -57,6 +57,7 @@ function cargarTablasDefaultFicheros(sistema){
 }
 
 function cargarTablasDefaultContenido(sistema, fichero){
+  console.log(sistema + " " + fichero);
   var request = new XMLHttpRequest();
   texto = "";
 
