@@ -33,6 +33,7 @@ function cargarTablasDefaultSistemas(){
   }
   sistemas = texto.split("\n");
   sistemas = sistemas.filter(e => e != "index.txt");
+  sistemas = sistemas.filter(e => e != "");
   return sistemas;
 }
 function cargarTablasDefaultFicheros(sistema){
@@ -51,6 +52,7 @@ function cargarTablasDefaultFicheros(sistema){
   }
   ficheros = texto.split("\n");
   ficheros = ficheros.filter(e => e != "index.txt");
+  ficheros = ficheros.filter(e => e != "");
   return ficheros;
 }
 
