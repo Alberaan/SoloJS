@@ -10,7 +10,7 @@ function cargarTablasDefault(){
   var request = new XMLHttpRequest();
   texto = "";
 
-  request.open('GET', './index.txt', false);
+  request.open('GET', './Tablas/index.txt', false);
   request.send(null);
   
   if (request.status === 200) {
@@ -23,7 +23,7 @@ function cargarTablasDefault(){
   sistemas = texto.split("\n");
 
   for (sistema of sistemas){
-    request.open('GET', './' + sistema.replace(".txt", "") + '/index.txt', false);
+    request.open('GET', './Tablas/' + sistema.replace(".txt", "") + '/index.txt', false);
     request.send(null);
     
     if (request.status === 200) {
@@ -35,7 +35,7 @@ function cargarTablasDefault(){
     }
     ficheros = texto.split("\n");
     for (sistema of sistemas){
-      request.open('GET', './' + sistema.replace(".txt", "") + '/index.txt', false);
+      request.open('GET', './Tablas/' + sistema.replace(".txt", "") + '/index.txt', false);
       request.send(null);
       
       if (request.status === 200) {
