@@ -3,6 +3,7 @@
 
 cargarDatosDefault();
 const datos = cargarDatosNavegador();
+cargarDatos();
 rellenarBotones();
 
 function cargarDatosDefault(){
@@ -11,9 +12,9 @@ function cargarDatosDefault(){
 
 function rellenarBotones(){
   const containerBotones = document.getElementById('botones');
-  const sistemaSelect = document.getElementById('filtro-sistemas-combo');
+  let sistemaSelect = document.getElementById('filtro-sistemas-combo');
   const filtroTexto = document.getElementById('filtro-sistemas-texto');
-  const sistemaSeleccionado = Array.from(sistemaSelect.selectedOptions).map(option => option.value)[0];
+  var sistemaSeleccionado = Array.from(sistemaSelect.selectedOptions).map(option => option.value)[0];
   cont = 0;
   var row = document.createElement('div');
   var rowAux = document.createElement('div');
@@ -23,27 +24,27 @@ function rellenarBotones(){
 
   for (const sistema of datos.sistemas){
     if(sistema.nombre === sistemaSeleccionado || sistemaSeleccionado === "Todos"){
-      if(sistema.nombre.includes(filtroTexto.value)){
         for (const fichero of sistema.ficheros){
-          btn = crearBoton(sistema, fichero);
-          var col1 = document.createElement('div');
-          col1.className = 'col-md-3';
-          col1.appendChild(btn);
+          if(fichero.nombre.replace(".txt", "").toLowerCase().includes(filtroTexto.value.toLowerCase())){
+            btn = crearBoton(sistema, fichero);
+            var col1 = document.createElement('div');
+            col1.className = 'col-md-3';
+            col1.appendChild(btn);
 
-          if(cont === 0){
-            containerBotones.appendChild(row);
-            var rowAux = document.createElement('div');
-            row = rowAux;
-            row.className = 'row mt-3';
-          }
-          row.appendChild(col1);
-          cont++;
+            if(cont === 0){
+              containerBotones.appendChild(row);
+              var rowAux = document.createElement('div');
+              row = rowAux;
+              row.className = 'row mt-3';
+            }
+            row.appendChild(col1);
+            cont++;
 
-          if (cont >= 4){
-            cont = 0;
+            if (cont >= 4){
+              cont = 0;
+            }
           }
         }
-      }
     }
 
   containerBotones.appendChild(row);
@@ -69,10 +70,6 @@ function botonClickado(sistema, fichero){
 
 function cargarDatosNavegador(){
   return JSON.parse(localStorage.getItem("datos_sistemas"));
-}
-function testCambioTexto(){
-  const sistemaFiltroTexto = document.getElementById('filtro-sistemas-texto');
-  console.log("Hello");
 }
 
 function cargarDatos() {

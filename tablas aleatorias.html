@@ -6,7 +6,7 @@
   <!-- Incluir los estilos de Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 </head>
-<body onload="cargarDatos()">
+<body>
 	<header>
 		<nav class="navbar navbar-expand-md bg-dark navbar-dark">
 		  <a class="navbar-brand" href="index.html">SoloJS</a>
@@ -29,13 +29,13 @@
       <div class="col-md-4">
         <h4>Contenido tabla:</h4>
         <textarea id="contenido" class="form-control" rows="5"></textarea>
+        <button onclick="obtenerElementoAleatorio()" class="btn btn-primary">Obtener elemento aleatorio</button>
       </div>
     </div>
     <div class="row">
       <div class="col-md-4">
         <h4>Resultado aleatorio:</h4>
         <textarea id="resultado" class="form-control" rows="5"></textarea>
-        <button onclick="obtenerElementoAleatorio()" class="btn btn-primary">Obtener elemento aleatorio</button>
         <button onclick="resetResultados()" class="btn btn-danger btn-reset">Reset</button>
       </div>
     </div>
