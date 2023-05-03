@@ -9,7 +9,7 @@ rellenarBotones();
 function cargarTablasDefault(){
   var texto = fetch('./Tablas/index.txt')
     .then(function(response) {
-      return response.text();
+      return response.text().split("\n");
     })
     .then(function(data) {
       console.log(data);
@@ -17,7 +17,7 @@ function cargarTablasDefault(){
     .catch(function(error) {
       console.error(error);
     });
-  sistemas = texto.split("\n");
+  sistemas = texto;
 
   for (sistema of sistemas){
     console.log(sistema);
