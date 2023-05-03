@@ -31,10 +31,9 @@ function cargarTablasDefault(){
       .catch(function(error) {
         console.error(error);
       });
+
     ficheros = ficherosSistema.split("\n");
     console.log(ficheros);
-
-
   }
 }
 
