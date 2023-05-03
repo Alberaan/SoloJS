@@ -6,6 +6,21 @@ const datos = cargarDatosNavegador();
 cargarDatos();
 rellenarBotones();
 
+function cargarTablasDefault(){
+  var texto = fetch('./Tablas/index.txt')
+    .then(function(response) {
+      return response.text();
+    })
+    .then(function(data) {
+      console.log(data);
+    })
+    .catch(function(error) {
+      console.error(error);
+    });
+  console.log(texto);
+
+}
+
 function cargarDatosDefault(){
   localStorage.setItem("datos_sistemas", jsonDatos);
 }
