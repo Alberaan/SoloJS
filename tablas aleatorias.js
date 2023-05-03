@@ -7,8 +7,6 @@ cargarDatos();
 rellenarBotones();
 
 function cargarTablasDefault(){
-  var request = new XMLHttpRequest();
-  texto = "";
   
   sistemas = cargarTablasDefaultSistemas();
   for (sistema of sistemas){
@@ -20,6 +18,9 @@ function cargarTablasDefault(){
 }
 
 function cargarTablasDefaultSistemas(){
+  var request = new XMLHttpRequest();
+  texto = "";
+
   request.open('GET', './Tablas/index.txt', false);
   request.send(null);
   
@@ -35,6 +36,9 @@ function cargarTablasDefaultSistemas(){
   return sistemas;
 }
 function cargarTablasDefaultFicheros(sistema){
+  var request = new XMLHttpRequest();
+  texto = "";
+
   request.open('GET', './Tablas/' + sistema.replace(".txt", "") + '/index.txt', false);
   request.send(null);
   
@@ -51,6 +55,9 @@ function cargarTablasDefaultFicheros(sistema){
 }
 
 function cargarTablasDefaultContenido(sistema, fichero){
+  var request = new XMLHttpRequest();
+  texto = "";
+
   request.open('GET', './Tablas/' + sistema.replace(".txt", "") + '/' + fichero, false);
   request.send(null);
   
