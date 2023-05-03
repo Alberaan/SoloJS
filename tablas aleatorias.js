@@ -17,8 +17,25 @@ function cargarTablasDefault(){
     .catch(function(error) {
       console.error(error);
     });
-  console.log(texto);
+  sistemas = texto.split("\n");
 
+  for (sistema of sistemas){
+    console.log(sistema);
+    var ficherosSistema = fetch('./Tablas/' + sistema + '/index.txt')
+      .then(function(response) {
+        return response.text();
+      })
+      .then(function(data) {
+        console.log(data);
+      })
+      .catch(function(error) {
+        console.error(error);
+      });
+    ficheros = ficherosSistema.split("\n");
+    console.log(ficheros);
+
+
+  }
 }
 
 function cargarDatosDefault(){
