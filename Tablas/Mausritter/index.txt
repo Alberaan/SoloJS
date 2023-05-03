@@ -8,14 +8,14 @@ Asentamientos_rasgos_notables.txt
 Asentamientos_tabernas_base.txt
 Asentamientos_tabernas_detalle.txt
 Asentamientos_tabernas_especialidad_de_la_casa.txt
-Asentamientos_tama§o.txt
+Asentamientos_tama√±o.txt
 Baratijas_variadas.txt
 Clima.txt
 Detalles_de_los_puntos_de_interes.txt
 Estaciones_invierno_clima.txt
 Estaciones_invierno_eventos_estacionales.txt
-Estaciones_oto§o_clima.txt
-Estaciones_oto§o_eventos_estacionales.txt
+Estaciones_oto√±o_clima.txt
+Estaciones_oto√±o_eventos_estacionales.txt
 Estaciones_primavera_clima.txt
 Estaciones_primavera_eventos_estacionales.txt
 Estaciones_verano_clima.txt
