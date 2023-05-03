@@ -22,10 +22,10 @@ function cargarTablasDefaultSistemas(){
   texto = "";
 
   request.open('GET', './Tablas/index.txt', false);
+  request.overrideMimeType('text/json; UTF-8');
   request.send(null);
   
   if (request.status === 200) {
-    console.log(request.responseText);
     texto = request.responseText;
   } else {
     console.error(request.status);
@@ -41,10 +41,10 @@ function cargarTablasDefaultFicheros(sistema){
   texto = "";
 
   request.open('GET', './Tablas/' + sistema.replace(".txt", "") + '/index.txt', false);
+  request.overrideMimeType('text/json; UTF-8');
   request.send(null);
   
   if (request.status === 200) {
-    console.log(request.responseText);
     texto = request.responseText;
   } else {
     console.error(request.status);
@@ -61,10 +61,10 @@ function cargarTablasDefaultContenido(sistema, fichero){
   texto = "";
 
   request.open('GET', './Tablas/' + sistema.replace(".txt", "") + '/' + fichero, false);
+  request.overrideMimeType('text/json; UTF-8');
   request.send(null);
   
   if (request.status === 200) {
-    console.log(request.responseText);
     texto = request.responseText;
   } else {
     console.error(request.status);
