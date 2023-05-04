@@ -5,9 +5,36 @@
 
 cargarDatosOnLoad();
 
+
+function importarTablas() {
+  const input = document.createElement('input');
+  input.type = 'file';
+
+  input.onchange = function(event) {
+    const archivo = event.target.files[0];
+    const lector = new FileReader();
+    lector.readAsText(archivo);
+
+    lector.onload = function() {
+      datos = JSON.parse(lector.result);
+      localStorage.setItem("datos_sistemas", lector.result);
+      cargarDatos();
+      rellenarBotones();
+    };
+
+    lector.onerror = function() {
+      console.log('Error al leer el archivo');
+    };
+  };
+
+  input.click();
+}
+
 function exportarTablas(){
+  console.log(datos);
+  text = JSON.stringify(datos);
   var element = document.createElement('a');
-  element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(datos));
+  element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
   element.setAttribute('download', "tablas.txt");
 
   element.style.display = 'none';
@@ -18,24 +45,20 @@ function exportarTablas(){
   document.body.removeChild(element);
 }
 
-// Start file download.
-download("hello.txt","This is the content of my file :)");
-
-}
 function cargarDatosOnLoad(){
   datos = JSON.parse(localStorage.getItem("datos_sistemas"));
 
   if (datos == null){
     localStorage.setItem("datos_sistemas", jsonDatos);
     const datos = cargarDatosNavegador();
-    cargarDatos();
-    rellenarBotones();
   }
+  cargarDatos();
+  rellenarBotones();
 }
 
 function cargarDatosDefault(){
-  const datos = cargarDatosNavegador();
   localStorage.setItem("datos_sistemas", jsonDatos);
+  datos = cargarDatosNavegador();
   cargarDatos();
   rellenarBotones();
 }
@@ -110,7 +133,6 @@ function cargarDatos() {
   sistemaSelect.addEventListener('change', clickSistemas);
   ficheroSelect.addEventListener('change', clickFicheros);
   sistemaFiltroSelect.addEventListener('change', rellenarBotones);
-  //sistemaFiltroTexto.addEventListener('keypress', rellenarBotones);
   cargarSistemas();
 }
 
@@ -156,8 +178,14 @@ function clickFicheros(){
 }
 
 function cargarSistemas(){
-  const sistemasElement = document.getElementById("sistemas");
+  let sistemasElement = document.getElementById("sistemas");
+  let ficherosElement = document.getElementById("ficheros");
+  let contenido = document.getElementById("contenido");
   const sistemasFiltrosElement = document.getElementById("filtro-sistemas-combo");
+
+  sistemasElement.innerHTML = null;
+  ficherosElement.innerHTML = null;
+  contenido.innerHTML = null;
 
   for (const sistema of datos.sistemas) {
     const option = document.createElement("option");
