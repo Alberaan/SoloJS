@@ -23,16 +23,21 @@
         <h4>Seleccionar Sistema:</h4>
         <select id="sistemas" multiple class="form-control">
         </select>
+        <button onclick="crearSistema()" class="btn btn-primary">Nuevo</button>
+        <button onclick="borrarSistema()" class="btn btn-primary">Borrar</button>
       </div>
       <div class="col-md-4">
         <h4>Seleccionar tabla:</h4>
         <select id="ficheros" multiple class="form-control">
         </select>
+        <button onclick="crearTabla()" class="btn btn-primary">Nuevo</button>
+        <button onclick="borrarTabla()" class="btn btn-primary">Borrar</button>
       </div>
       <div class="col-md-4">
         <h4>Contenido tabla:</h4>
         <textarea id="contenido" class="form-control" rows="5"></textarea>
         <button onclick="obtenerElementoAleatorio()" class="btn btn-primary">Obtener elemento aleatorio</button>
+        <button onclick="actualizarContenido()" class="btn btn-primary">Guardar</button>
       </div>
     </div>
     <div class="row">

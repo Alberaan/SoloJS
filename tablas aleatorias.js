@@ -158,6 +158,90 @@ function clickSistemas(){
   }
 }
 
+function crearTabla(){
+  const sistemaSelect = document.getElementById('sistemas');
+
+  let nuevaTabla = prompt("Nombre de la nueva tabla:", "Nueva tabla");
+
+  if (nuevaTabla == null || nuevaTabla == "") {
+    console.log("Cancelado");
+    return
+  } 
+
+  for (sistema of datos.sistemas){
+    if(sistema.nombre == sistemaSelect.value){
+      fichero = {"nombre":nuevaTabla, "contenido": ""};
+      sistema.ficheros.push(fichero);
+    }
+  }
+  localStorage.setItem("datos_sistemas", JSON.stringify(datos));
+  clickSistemas();
+  rellenarBotones();
+}
+
+function crearSistema(){
+  const sistemaSelect = document.getElementById('sistemas');
+
+  let nuevoSistema = prompt("Nombre del nuevo sistema:", "Nuevo sistema");
+
+
+  if (nuevoSistema== null || nuevoSistema== "") {
+    console.log("Cancelado");
+    return
+  } 
+
+  sistema = {"nombre": nuevoSistema, "ficheros":[]}
+  datos.sistemas.push(sistema);
+
+  localStorage.setItem("datos_sistemas", JSON.stringify(datos));
+  cargarDatos();
+  rellenarBotones();
+}
+
+function actualizarContenido(){
+  const sistemaSelect = document.getElementById('sistemas');
+  const ficheroSelect = document.getElementById('ficheros');
+  const contenidoTextarea = document.getElementById('contenido').value;
+
+
+  for (sistema of datos.sistemas){
+    if(sistema.nombre == sistemaSelect.value){
+      for (fichero of sistema.ficheros){
+        if(fichero.nombre == ficheroSelect.value){
+          fichero.contenido = contenidoTextarea;
+        }
+      }
+    }
+  }
+  localStorage.setItem("datos_sistemas", JSON.stringify(datos));
+  alert("Contenido actualizado");
+}
+
+function borrarTabla(){
+  const sistemaSelect = document.getElementById('sistemas');
+  const ficheroSelect = document.getElementById('ficheros');
+
+  for (sistema of datos.sistemas){
+    if(sistema.nombre == sistemaSelect.value){
+      sistema.ficheros = sistema.ficheros.filter( el => el.nombre != ficheroSelect.value );
+    }
+  }
+  localStorage.setItem("datos_sistemas", JSON.stringify(datos));
+  clickSistemas();
+  rellenarBotones();
+}
+
+function borrarSistema(){
+  const sistemaSelect = document.getElementById('sistemas');
+  const ficheroSelect = document.getElementById('ficheros');
+
+  datos.sistemas = datos.sistemas.filter( el => el.nombre != sistemaSelect.value );
+
+  localStorage.setItem("datos_sistemas", JSON.stringify(datos));
+  cargarDatos();
+  rellenarBotones();
+}
+
 function clickFicheros(){
   const sistemaSelect = document.getElementById('sistemas');
   const ficheroSelect = document.getElementById('ficheros');
@@ -181,11 +265,12 @@ function cargarSistemas(){
   let sistemasElement = document.getElementById("sistemas");
   let ficherosElement = document.getElementById("ficheros");
   let contenido = document.getElementById("contenido");
-  const sistemasFiltrosElement = document.getElementById("filtro-sistemas-combo");
+  let sistemasFiltrosElement = document.getElementById("filtro-sistemas-combo");
 
   sistemasElement.innerHTML = null;
   ficherosElement.innerHTML = null;
-  contenido.innerHTML = null;
+  contenido.value = null;
+  sistemasFiltrosElement.innerHTML = null;
 
   for (const sistema of datos.sistemas) {
     const option = document.createElement("option");
