@@ -65,7 +65,7 @@ function getFicherosRemoto(sistema){
   const data = [];
 
   for (const fichero of ficheros) {
-    data.push({ "nombre": fichero, "contenido": getContenidoRemoto(fichero)});
+    data.push({ "nombre": fichero, "contenido": getContenidoRemoto(sistema, fichero)});
   }
 
   return data;
