@@ -1,91 +1,24 @@
  // Leer el JSON almacenado en el LocalStorage
 
 
-cargarDatosDefault();
-const datos = cargarDatosNavegador();
-cargarDatos();
-rellenarBotones();
+//cargarDatosDefault();
 
-function cargarTablasDefault(){
-  sistemas = getSistemasRemoto();
-  const data = { "sistemas": [] };
+cargarDatosOnLoad();
 
-  for (sistema of sistemas){
-      const newSistema = { "nombre": sistema, "ficheros": getFicherosRemoto(sistema) };
-      data["sistemas"].push(newSistema);
+function cargarDatosOnLoad(){
+  if (datos == null){
+    const datos = cargarDatosNavegador();
+    localStorage.setItem("datos_sistemas", jsonDatos);
+    cargarDatos();
+    rellenarBotones();
   }
-  console.log(data);
-}
-
-function getSistemasRemoto(){
-  var request = new XMLHttpRequest();
-  texto = "";
-
-  request.open('GET', './Tablas/index.txt', false);
-  request.overrideMimeType('text/json; UTF-8');
-  request.send(null);
-  
-  if (request.status === 200) {
-    texto = request.responseText;
-  } else {
-    console.error(request.status);
-    return;
-  }
-  sistemas = texto.split("\n");
-  sistemas = sistemas.filter(e => e != "index.txt");
-  sistemas = sistemas.filter(e => e != "");
-  return sistemas;
-}
-function getFicherosRemoto(sistema){
-  var request = new XMLHttpRequest();
-  texto = "";
-
-  request.open('GET', './Tablas/' + sistema.replace(".txt", "") + '/index.txt', false);
-  request.overrideMimeType('text/json; UTF-8');
-  request.send(null);
-  
-  if (request.status === 200) {
-    texto = request.responseText;
-  } else {
-    console.error(request.status);
-    return;
-  }
-  ficheros = texto.split("\n");
-  ficheros = ficheros.filter(e => e != "index.txt");
-  ficheros = ficheros.filter(e => e != "");
-
-
-  const data = [];
-
-  for (const fichero of ficheros) {
-    data.push({ "nombre": fichero, "contenido": getContenidoRemoto(sistema, fichero)});
-  }
-
-  return data;
-}
-
-function getContenidoRemoto(sistema, fichero){
-  var request = new XMLHttpRequest();
-  texto = "";
-
-  request.open('GET', './Tablas/' + sistema.replace(".txt", "") + '/' + fichero, false);
-  request.overrideMimeType('text/json; UTF-8');
-  request.send(null);
-  
-  if (request.status === 200) {
-    texto = request.responseText;
-  } else {
-    console.error(request.status);
-    return;
-  }
-  contenido = texto;
-  return contenido;
 }
 
 function cargarDatosDefault(){
-  datos = cargarTablasDefault();
-  //localStorage.setItem("datos_sistemas", jsonDatos);
-  localStorage.setItem("datos_sistemas", datos);
+  const datos = cargarDatosNavegador();
+  localStorage.setItem("datos_sistemas", jsonDatos);
+  cargarDatos();
+  rellenarBotones();
 }
 
 function rellenarBotones(){
