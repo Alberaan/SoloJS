@@ -7,17 +7,24 @@ cargarDatos();
 rellenarBotones();
 
 function cargarTablasDefault(){
-  
-  sistemas = cargarTablasDefaultSistemas();
+  sistemas = getSistemasRemoto();
+  const data = { "sistemas": [] };
+
+  //for (sistema of sistemas){
+  //  ficheros = cargarTablasDefaultFicheros(sistema);
+  //  for (fichero of ficheros){
+  //    console.log(sistema + " " + fichero);
+  //    contenido = cargarTablasDefaultContenido(sistema, fichero);
+  //  }
+  //}
   for (sistema of sistemas){
-    ficheros = cargarTablasDefaultFicheros(sistema);
-    for (fichero of ficheros){
-      contenido = cargarTablasDefaultContenido(sistema, fichero);
-    }
+      const newSistema = { "nombre": sistema, "ficheros": getFicherosRemoto(path.join(root, directory)) };
+      data["sistemas"].push(newSistema);
   }
+  console.log(data);
 }
 
-function cargarTablasDefaultSistemas(){
+function getSistemasRemoto(){
   var request = new XMLHttpRequest();
   texto = "";
 
@@ -36,7 +43,7 @@ function cargarTablasDefaultSistemas(){
   sistemas = sistemas.filter(e => e != "");
   return sistemas;
 }
-function cargarTablasDefaultFicheros(sistema){
+function getFicherosRemoto(sistema){
   var request = new XMLHttpRequest();
   texto = "";
 
@@ -53,11 +60,18 @@ function cargarTablasDefaultFicheros(sistema){
   ficheros = texto.split("\n");
   ficheros = ficheros.filter(e => e != "index.txt");
   ficheros = ficheros.filter(e => e != "");
-  return ficheros;
+
+
+  const data = [];
+
+  for (const fichero of ficheros) {
+    data.push({ "nombre": fichero, "contenido": getContenidoRemoto(path.join(carpeta, fichero)) });
+  }
+
+  return data;
 }
 
-function cargarTablasDefaultContenido(sistema, fichero){
-  console.log(sistema + " " + fichero);
+function getContenidoRemoto(sistema, fichero){
   var request = new XMLHttpRequest();
   texto = "";
 
