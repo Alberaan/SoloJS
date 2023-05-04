@@ -18,7 +18,7 @@ function cargarTablasDefault(){
   //  }
   //}
   for (sistema of sistemas){
-      const newSistema = { "nombre": sistema, "ficheros": getFicherosRemoto(path.join(root, directory)) };
+      const newSistema = { "nombre": sistema, "ficheros": getFicherosRemoto(sistema) };
       data["sistemas"].push(newSistema);
   }
   console.log(data);
@@ -65,7 +65,7 @@ function getFicherosRemoto(sistema){
   const data = [];
 
   for (const fichero of ficheros) {
-    data.push({ "nombre": fichero, "contenido": getContenidoRemoto(path.join(carpeta, fichero)) });
+    data.push({ "nombre": fichero, "contenido": getContenidoRemoto(fichero)});
   }
 
   return data;
