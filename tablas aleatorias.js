@@ -10,13 +10,6 @@ function cargarTablasDefault(){
   sistemas = getSistemasRemoto();
   const data = { "sistemas": [] };
 
-  //for (sistema of sistemas){
-  //  ficheros = cargarTablasDefaultFicheros(sistema);
-  //  for (fichero of ficheros){
-  //    console.log(sistema + " " + fichero);
-  //    contenido = cargarTablasDefaultContenido(sistema, fichero);
-  //  }
-  //}
   for (sistema of sistemas){
       const newSistema = { "nombre": sistema, "ficheros": getFicherosRemoto(sistema) };
       data["sistemas"].push(newSistema);
@@ -90,7 +83,9 @@ function getContenidoRemoto(sistema, fichero){
 }
 
 function cargarDatosDefault(){
-  localStorage.setItem("datos_sistemas", jsonDatos);
+  datos = cargarTablasDefault();
+  //localStorage.setItem("datos_sistemas", jsonDatos);
+  localStorage.setItem("datos_sistemas", datos);
 }
 
 function rellenarBotones(){
