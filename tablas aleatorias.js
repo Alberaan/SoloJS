@@ -5,6 +5,23 @@
 
 cargarDatosOnLoad();
 
+function exportarTablas(){
+  var element = document.createElement('a');
+  element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(datos));
+  element.setAttribute('download', "tablas.txt");
+
+  element.style.display = 'none';
+  document.body.appendChild(element);
+
+  element.click();
+
+  document.body.removeChild(element);
+}
+
+// Start file download.
+download("hello.txt","This is the content of my file :)");
+
+}
 function cargarDatosOnLoad(){
   datos = JSON.parse(localStorage.getItem("datos_sistemas"));
 
