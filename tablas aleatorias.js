@@ -6,9 +6,11 @@
 cargarDatosOnLoad();
 
 function cargarDatosOnLoad(){
+  datos = JSON.parse(localStorage.getItem("datos_sistemas"));
+
   if (datos == null){
-    const datos = cargarDatosNavegador();
     localStorage.setItem("datos_sistemas", jsonDatos);
+    const datos = cargarDatosNavegador();
     cargarDatos();
     rellenarBotones();
   }
