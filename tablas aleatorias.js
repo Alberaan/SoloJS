@@ -1,10 +1,70 @@
- // Leer el JSON almacenado en el LocalStorage
+// Leer el JSON almacenado en el LocalStorage
 
 
 //cargarDatosDefault();
 
 cargarDatosOnLoad();
 
+function dado1(){
+  const tirada = document.getElementById("dado1").value;
+  let textArea = document.getElementById("resultado")
+
+  textoADevolver = textArea.value;
+
+  var resultado = tiradaDeDados(tirada);
+
+  textArea.value = textArea.value + resultado.suma + ": (" + resultado.cadenaResultados + ")" + "\n";
+  textArea.scrollTop = textArea.scrollHeight;
+
+}
+
+function tiradaDeDados(notacion) {
+  var numDados, tipoDado, resultados, suma, cadenaResultados;
+
+  if (notacion.match(/F/i)) { // Si la notación incluye una F (sin importar mayúsculas o minúsculas), se trata de un dado Fate
+    numDados = 4; // Los dados Fate siempre se tiran en grupos de cuatro
+    tipoDado = 3; // Los dados Fate tienen tres caras (dos en blanco, dos en negro y dos con un símbolo "+")
+  } else { // Si no, se trata de un dado normal
+    [numDados, tipoDado] = notacion.split("d");
+    numDados = parseInt(numDados);
+    tipoDado = parseInt(tipoDado);
+  }
+
+  resultados = [];
+  suma = 0;
+
+  for (var i = 0; i < numDados; i++) {
+    if (tipoDado == 3) { // Si es un dado Fate, tiramos 4 dados y contamos los "+" y "-"
+      var resultado = 0;
+      for (var j = 0; j < 4; j++) {
+        var resultado = Math.floor(Math.random() * 3) - 1;
+      }
+    } else { // Si es un dado normal, tiramos el dado correspondiente
+      var resultado = Math.floor(Math.random() * tipoDado) + 1;
+    }
+    resultados.push(resultado);
+    suma += resultado;
+  }
+
+  cadenaResultados = resultados.join(", ");
+
+  return {
+    suma: suma,
+    resultados: resultados,
+    cadenaResultados: cadenaResultados,
+  };
+}
+
+function mostrarEditor(){
+  let editor = document.getElementById("gestion-tablas");
+
+  if (editor.classList.contains("d-none")){
+    editor.classList.remove("d-none");
+  }
+  else {
+    editor.classList.add("d-none");
+  }
+}
 
 function importarTablas() {
   const input = document.createElement('input');
@@ -77,30 +137,30 @@ function rellenarBotones(){
 
   for (const sistema of datos.sistemas){
     if(sistema.nombre === sistemaSeleccionado || sistemaSeleccionado === "Todos"){
-        for (const fichero of sistema.ficheros){
-          if(fichero.nombre.replace(".txt", "").toLowerCase().includes(filtroTexto.value.toLowerCase())){
-            btn = crearBoton(sistema, fichero);
-            var col1 = document.createElement('div');
-            col1.className = 'col-md-3';
-            col1.appendChild(btn);
+      for (const fichero of sistema.ficheros){
+        if(fichero.nombre.replace(".txt", "").toLowerCase().includes(filtroTexto.value.toLowerCase())){
+          btn = crearBoton(sistema, fichero);
+          var col1 = document.createElement('div');
+          col1.className = 'col-md-3';
+          col1.appendChild(btn);
 
-            if(cont === 0){
-              containerBotones.appendChild(row);
-              var rowAux = document.createElement('div');
-              row = rowAux;
-              row.className = 'row mt-3';
-            }
-            row.appendChild(col1);
-            cont++;
+          if(cont === 0){
+            containerBotones.appendChild(row);
+            var rowAux = document.createElement('div');
+            row = rowAux;
+            row.className = 'row mt-3';
+          }
+          row.appendChild(col1);
+          cont++;
 
-            if (cont >= 4){
-              cont = 0;
-            }
+          if (cont >= 4){
+            cont = 0;
           }
         }
+      }
     }
 
-  containerBotones.appendChild(row);
+    containerBotones.appendChild(row);
 
   }
 }
@@ -140,7 +200,7 @@ function clickSistemas(){
   const sistemaSelect = document.getElementById('sistemas');
   const ficheroSelect = document.getElementById('ficheros');
   const contenidoTextarea = document.getElementById('contenido');
-  
+
   ficheroSelect.innerHTML = "";
   contenidoTextarea.value = "";
 
@@ -284,10 +344,10 @@ function cargarSistemas(){
     sistemasFiltrosElement.appendChild(optionFiltro);
   }
 
-    const optionFiltro = document.createElement("option");
-    optionFiltro.value = "Todos";
-    optionFiltro.textContent = "Todos";
-    sistemasFiltrosElement.appendChild(optionFiltro);
+  const optionFiltro = document.createElement("option");
+  optionFiltro.value = "Todos";
+  optionFiltro.textContent = "Todos";
+  sistemasFiltrosElement.appendChild(optionFiltro);
 
 }
 
