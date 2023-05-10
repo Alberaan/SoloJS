@@ -131,7 +131,7 @@ function cargarJsonExternoDefault(){
 
   if (xhr.readyState === 4 && xhr.status === 200) {
     var data = JSON.parse(xhr.responseText);
-    return data.stringify();
+    return data;
     // trabaja con el objeto JavaScript aquí
   } else {
     console.error('No se pudo leer el archivo JSON.');
