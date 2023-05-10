@@ -118,7 +118,7 @@ function cargarDatosOnLoad(){
 
 function cargarDatosDefault(){
   jsonDatos = cargarJsonExternoDefault();
-  localStorage.setItem("datos_sistemas", jsonDatos);
+  localStorage.setItem("datos_sistemas", jsonDatos.stringify();
   datos = cargarDatosNavegador();
   cargarDatos();
   rellenarBotones();
