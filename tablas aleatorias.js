@@ -167,7 +167,7 @@ function rellenarBotones(){
 
 function crearBoton(sistema, fichero){
   var btn = document.createElement('button');
-  btn.className = 'btn btn-primary btn-block';
+  btn.className = 'btn btn-outline-primary btn-block h-100';
   btn.innerHTML = fichero.nombre.replace(".txt", "").replaceAll("_", " ");
   btn.style = "white-space:normal;display:inline-flex";
 
