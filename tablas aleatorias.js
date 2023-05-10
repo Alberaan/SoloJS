@@ -109,18 +109,33 @@ function cargarDatosOnLoad(){
   datos = JSON.parse(localStorage.getItem("datos_sistemas"));
 
   if (datos == null){
-    localStorage.setItem("datos_sistemas", jsonDatos);
-    const datos = cargarDatosNavegador();
+    cargarDatosDefault();
+    return;
   }
   cargarDatos();
   rellenarBotones();
 }
 
 function cargarDatosDefault(){
+  jsonDatos = cargarJsonExternoDefault();
   localStorage.setItem("datos_sistemas", jsonDatos);
   datos = cargarDatosNavegador();
   cargarDatos();
   rellenarBotones();
+}
+
+function cargarJsonExternoDefault(){
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', 'datos.json', false);
+  xhr.send();
+
+  if (xhr.readyState === 4 && xhr.status === 200) {
+    var data = JSON.parse(xhr.responseText);
+    return data;
+    // trabaja con el objeto JavaScript aquí
+  } else {
+    console.error('No se pudo leer el archivo JSON.');
+  }
 }
 
 function rellenarBotones(){
