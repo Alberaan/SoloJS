@@ -22,9 +22,21 @@ function generar() {
 
   explorarHexagonos(hexInicial, hexesExplorados, null);
 
-  textArea.value = imprimirHexagonosExplorados(hexesExplorados);
+  texto = imprimirHexagonosExplorados(hexesExplorados);
+  textArea.value = texto; 
+  cargarImagen(texto);
 }
 
+function cargarImagen(texto){
+  texto = texto + "\n" + "include gnomeyland.txt"
+  var imagenMapa = document.getElementById("imagen-mapa");
+  var url = "https://campaignwiki.org/text-mapper/render?map=";
+
+  url = url + encodeURIComponent(texto);
+
+  imagenMapa.src = url;
+  console.log(url);
+}
 function imprimirHexagonosExplorados(explorados){
   texto = "";
   for (var i = 0; i < explorados.length; i++){
