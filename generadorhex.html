@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Documento con Bootstrap</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        <a class="navbar-brand" href="index.html#">SoloJS</a>
+      </nav>
+    </header>
+    <div class="container">
+      <h1>Generador de hexmap para TextMapper usando Modulo de exploración de Basic Fantasy RPG</h1>
+      <hr>
+      <img src="https://via.placeholder.com/300" class="img-fluid rounded">
+      <hr>
+      <div class="row">
+        <div class="col-md-9">
+          <textarea id="hex-text" class="form-control" rows="10"></textarea>
+        </div>
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="anchura">Anchura del mapa (1-99):</label>
+            <input type="number" id="anchura" class="form-control" min="1" max="99">
+          </div>
+          <div class="form-group">
+            <label for="altura">Altura del mapa (1-99):</label>
+            <input type="number" id="altura" class="form-control" min="1" max="99">
+          </div>
+          <button onclick="generar()" id="generar-btn" class="btn btn-primary">Generar</button>
+        </div>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="./generadorhex.js"></script>
+    <script src="./generadorhextablas.js"></script>
+  </body>
+</html>
