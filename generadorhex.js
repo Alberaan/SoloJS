@@ -9,11 +9,11 @@ function generar() {
   maxHeight= document.getElementById("altura").value;
 
   if(maxWidth == null || maxWidth < 1 || maxWidth > 99){
-    textArea.value = "La anchura debe de ser entre 1 y 99";
+    textArea.innerHTML = "La anchura debe de ser entre 1 y 99";
     return;
   }
   if(maxHeight == null || maxHeight < 1 || maxHeight> 99){
-    textArea.value = "La altura debe de ser entre 1 y 99";
+    textArea.innerHTML = "La altura debe de ser entre 1 y 99";
     return;
   }
 
@@ -23,7 +23,7 @@ function generar() {
   explorarHexagonos(hexInicial, hexesExplorados, null);
 
   texto = imprimirHexagonosExplorados(hexesExplorados);
-  textArea.value = texto; 
+  textArea.innerHTML= texto; 
   cargarImagen(texto);
 }
 
@@ -35,7 +35,6 @@ function cargarImagen(texto){
   url = url + encodeURIComponent(texto);
 
   imagenMapa.src = url;
-  console.log(url);
 }
 function imprimirHexagonosExplorados(explorados){
   texto = "";
