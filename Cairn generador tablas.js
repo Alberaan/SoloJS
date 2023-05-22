@@ -153,15 +153,15 @@ const tablaVoces = [
 
 const tablaVestimentas = [
 "Antigua", 
-"Ensangrentad", 
+"Ensangrentada", 
 "Con barro", 
-"Elegant", 
+"Elegante", 
 "De otro lugar", 
-"Malolient", 
+"Maloliente", 
 "Desaliñada", 
-"Suci", 
+"Sucia", 
 "Deshilachada", 
-"Uniform"
+"Uniforme"
 ];
 
 const tablaVirtudes = [
