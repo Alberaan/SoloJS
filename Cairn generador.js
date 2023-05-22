@@ -22,7 +22,9 @@ function generarPersonaje() {
   const equipoparaexpediciones = generarEquipoParaExpediciones();
   const herramientas = generarHerramienta();
   const baratijas = generarBaratija();
-  const objetosadicionales= generarObjetosAdicional();
+  const objetosadicionales = generarObjetosAdicional() + ", raciones para tres días, una antorcha";
+  const edad = generarEdad();
+  const oro = generarOro();
   
   // Mostrar los valores en la página
   document.getElementById("fue").textContent = fue;
@@ -48,6 +50,8 @@ function generarPersonaje() {
   document.getElementById("herramientas").textContent = herramientas;
   document.getElementById("baratijas").textContent = baratijas ;
   document.getElementById("objetosadicionales").textContent = objetosadicionales;
+  document.getElementById("edad").textContent = edad;
+  document.getElementById("oro").textContent = oro;
 }
 
 function tirarDados() {
@@ -125,7 +129,6 @@ function generarVoz(){
 
   return elementoAleatorio;
 }
-
 
 function generarVestimenta(){
   vestimentas = tablaVestimentas;
@@ -256,4 +259,19 @@ function generarLibroDeHechizos(){
   const elementoAleatorio = baratijas[indiceAleatorio];
 
   return elementoAleatorio;
+}
+
+function generarEdad(){
+  const dado1 = Math.floor(Math.random() * 20) + 1;
+  const dado2 = Math.floor(Math.random() * 20) + 1;
+
+  return dado1 + dado2 + 10;
+}
+
+function generarOro(){
+  const dado1 = Math.floor(Math.random() * 6) + 1;
+  const dado2 = Math.floor(Math.random() * 6) + 1;
+  const dado3 = Math.floor(Math.random() * 6) + 1;
+
+  return dado1 + dado2 + dado3;
 }
