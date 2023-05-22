@@ -152,16 +152,16 @@ const tablaVoces = [
 ];
 
 const tablaVestimentas = [
-  "Atlético", 
-	"Flácido", 
-	"Bajo", 
-	"Gordo", 
-	"Enorme", 
-	"Larguirucho", 
-	"Escuálido", 
-	"Musculoso", 
-	"Escultural", 
-	"Robusto" 
+"Antigua", 
+"Ensangrentad", 
+"Con barro", 
+"Elegant", 
+"De otro lugar", 
+"Malolient", 
+"Desaliñada", 
+"Suci", 
+"Deshilachada", 
+"Uniform"
 ];
 
 const tablaVirtudes = [
