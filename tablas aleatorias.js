@@ -5,8 +5,13 @@
 
 cargarDatosOnLoad();
 
-function dado1(){
-  const tirada = document.getElementById("dado1").value;
+function dado(cadenaDado){
+  let tirada = "";
+  if (cadenaDado == "custom"){
+    tirada = document.getElementById("dado1").value;
+  } else{
+    tirada = cadenaDado;
+  }
   let textArea = document.getElementById("resultado")
 
   textoADevolver = textArea.value;

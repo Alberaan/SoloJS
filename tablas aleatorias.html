@@ -21,12 +21,20 @@
             <button onclick="resetResultados()" class="btn btn-danger btn-reset">Reset</button>
             <div class="col-md-8">
               <div class="row">
+                  <button onclick="dado('1d4')" class="btn btn-warning btn-lg">1d4</button>
+                  <button onclick="dado('1d6')" class="btn btn-warning btn-lg">1d6</button>
+                  <button onclick="dado('1d8')" class="btn btn-warning btn-lg">1d8</button>
+                  <button onclick="dado('1d10')" class="btn btn-warning btn-lg">1d10</button>
+                  <button onclick="dado('1d12')" class="btn btn-warning btn-lg">1d12</button>
+                  <button onclick="dado('1d20')" class="btn btn-warning btn-lg">1d20</button>
+              </div>
+              <div class="row">
                 <h4>Lanzar dados:</h4>
                 <div class="col-md-10">
                   <input type="text" class="form-control" id="dado1">
                 </div>
                 <div class="col-md-2">
-                  <button onclick="dado1()" class="btn btn-primary">Lanzar</button>
+                  <button onclick="dado('custom')" class="btn btn-primary">Lanzar</button>
                 </div>
               </div>
             </div>
