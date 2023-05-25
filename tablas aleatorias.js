@@ -278,6 +278,59 @@ function crearSistema(){
   rellenarBotones();
 }
 
+function editarSistema(){
+  const sistemaSelect = document.getElementById('sistemas').value;
+  if (sistemaSelect == "" ||sistemaSelect == null){
+    alert("Debes de seleccionar un sistema");
+    return;
+  }
+
+  let nuevoSistema = prompt("Nuevo nombre para el sistema:", sistemaSelect);
+
+  if (nuevoSistema== null || nuevoSistema== "") {
+    alert("Cancelado. Introduce un nombre válido");
+    return
+  } 
+  for (sistema of datos.sistemas){
+    if(sistema.nombre == sistemaSelect){
+      sistema.nombre = nuevoSistema;
+    }
+  }
+  localStorage.setItem("datos_sistemas", JSON.stringify(datos));
+  cargarDatos();
+  rellenarBotones();
+  alert("Nombre del sistema actualizado");
+  return;
+} 
+
+function editarTabla(){
+  const tablaSelect = document.getElementById('ficheros').value;
+  if (tablaSelect == "" || tablaSelect == null){
+    alert("Debes de seleccionar una tabla");
+    return;
+  }
+
+  let nuevaTabla = prompt("Nuevo nombre para la tabla:", tablaSelect);
+
+  if (nuevaTabla == null || nuevaTabla == "") {
+    alert("Cancelado. Introduce un nombre válido");
+    return
+  } 
+
+  for (sistema of datos.sistemas){
+    for (tabla of sistema.ficheros){
+      if(tabla.nombre == tablaSelect){
+        tabla.nombre = nuevaTabla;
+      }
+    }
+  }
+  localStorage.setItem("datos_sistemas", JSON.stringify(datos));
+  cargarDatos();
+  rellenarBotones();
+  alert("Nombre de la tabla actualizado");
+  return;
+} 
+
 function actualizarContenido(){
   const sistemaSelect = document.getElementById('sistemas');
   const ficheroSelect = document.getElementById('ficheros');
