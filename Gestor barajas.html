@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Baraja de Cartas</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        <a class="navbar-brand" href="./index.html">SoloJS</a>
+      </nav>
+    </header>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h2>Baraja</h2>
+          <select id="seleccionar-baraja" class="form-control" muttiple="">
+            <!-- Aquí puedes añadir opciones de barajas -->
+          </select>
+          <button onclick="crearBaraja()" id="crear-baraja" class="btn btn-primary">Crear Baraja</button>
+          <button onclick="borrarBaraja()" id="borrar-baraja" class="btn btn-danger">Borrar Baraja</button>
+          <button onclick="editarBaraja()" id="editar-baraja" class="btn btn-secondary">Editar Baraja</button>
+        </div>
+        <div class="col">
+          <h2>Cartas</h2>
+          <img id="ultima-carta-robada" src="" alt="Última Carta Robada" class="img-fluid">
+          <button onclick="robarCarta()" id="robar-carta" class="btn btn-primary">Robar Carta</button>
+          <h3>Cartas por Robar</h3>
+          <textarea id="mazo-robo-texto" type="text" class="form-control" value=""></textarea>
+          <!--<button onclick="guardarCambiosRobo()" id="guardar-cambios-mazo-robo" class="btn btn-primary">Guardar cambios</button> -->
+          <h3>Cartas Robadas</h3>
+          <textarea id="mazo-descartes-texto" type="text" class="form-control" value=""></textarea>
+          <!-- <button onclick="guardarCambiosDescartes()" id="guardar-cambios-mazo-descartes" class="btn btn-primary">Guardar cambios</button> -->
+          <button onclick="resetMazo()" id="reset-mazo" class="btn btn-danger">Reiniciar mazo</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="./gestor barajas.js"></script>
+  </body>
+</html>
