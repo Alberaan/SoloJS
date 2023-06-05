@@ -12,6 +12,7 @@ function crearBaraja(){
   baraja = {"nombre": nuevaBaraja, "mazo": cartasPoker, "descartes": []};
   datos.barajas.push(baraja);
   localStorage.setItem("barajas", JSON.stringify(datos));
+  cargarBarajas(datos);
   cargarDatos();
 }
 
@@ -22,6 +23,7 @@ function borrarBaraja(){
   datos.barajas = datos.barajas.filter( el => el.nombre != barajaSelect.value );
 
   localStorage.setItem("barajas", JSON.stringify(datos));
+  cargarBarajas(datos);
   cargarDatos();
   alert("Baraja eliminada");
 
@@ -48,6 +50,7 @@ function editarBaraja(){
     }
   }
   localStorage.setItem("barajas", JSON.stringify(datos));
+  cargarBarajas(datos);
   cargarDatos();
   alert("Nombre de la baraja actualizado");
   return;
@@ -61,7 +64,7 @@ function cargarImagen(){
 
   for (const baraja of datos.barajas){
     if(baraja.nombre == barajaSelect){
-      ultimaCartaRobada = baraja.descartes.slice(-1);
+      ultimaCartaRobada = baraja.descartes.slice(-1)[0];
     }
   }
 
@@ -69,14 +72,25 @@ function cargarImagen(){
 
   const image = document.getElementById("ultima-carta-robada");
 
-  if (ultimaCartaRobada.length == 0){
+  if (ultimaCartaRobada == null){
     rutaImagen = "./poker/back.jpg"
     image.style.width = "50%";
     image.style.height = "auto";
-  } else {
-    rutaImagen = "./poker/" + ultimaCartaRobada +".svg";
+
+    image.src = rutaImagen;
+    return
   }
 
+  if (!cartasPoker.includes(ultimaCartaRobada)){
+    rutaImagen = "./poker/error.jpg";
+    image.style.width = "50%";
+    image.style.height = "auto";
+    image.src = rutaImagen;
+    return
+  }
+
+
+  rutaImagen = "./poker/" + ultimaCartaRobada +".svg";
   image.src = rutaImagen;
 }
 
@@ -119,11 +133,37 @@ function obtenerElementoAleatorioArray(miArray){
   const numeroAleatorio = Math.floor(Math.random() * miArray.length);
   return miArray[numeroAleatorio];
 }
-function guardarCambiosRobo(){
 
+function guardarCambiosRobo(){
+  datos = JSON.parse(localStorage.getItem("barajas"));
+  const barajaSelect = document.getElementById('seleccionar-baraja').value;
+  const mazoRoboTexto = document.getElementById('mazo-robo-texto');
+
+  for (let baraja of datos.barajas){
+    if (baraja.nombre == barajaSelect){
+      cartasNuevas = mazoRoboTexto.value.split("\n");
+      baraja.mazo = cartasNuevas;
+      localStorage.setItem("barajas", JSON.stringify(datos));
+      cargarDatos();
+      alert("Contenido del mazo actualizado");
+    }
+  }
 }
 
 function guardarCambiosDescartes(){
+  datos = JSON.parse(localStorage.getItem("barajas"));
+  const barajaSelect = document.getElementById('seleccionar-baraja').value;
+  const mazoRoboTexto = document.getElementById('mazo-descartes-texto');
+
+  for (let baraja of datos.barajas){
+    if (baraja.nombre == barajaSelect){
+      cartasNuevas = mazoRoboTexto.value.split("\n");
+      baraja.descartes = cartasNuevas;
+      localStorage.setItem("barajas", JSON.stringify(datos));
+      cargarDatos();
+      alert("Contenido del mazo de descartes actualizado");
+    }
+  }
 
 }
 
@@ -135,6 +175,8 @@ function cargarDatosonLoad(){
   localStorage.setItem("barajas", JSON.stringify(datos));
   }
 
+  datos = JSON.parse(localStorage.getItem("barajas"));
+  cargarBarajas(datos);
   cargarDatos(datos);
 
 }
@@ -144,7 +186,6 @@ function cargarDatos(datos){
   const barajaSelect = document.getElementById("seleccionar-baraja");
 
   barajaSelect.addEventListener('change', clickBarajas);
-  cargarBarajas(datos);
   cargarMazoRobo(datos, barajaSelect.value);
   cargarMazoDescartes(datos, barajaSelect.value);
   cargarImagen();
