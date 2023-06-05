@@ -131,7 +131,7 @@ function cargarDatosonLoad(){
   datos = JSON.parse(localStorage.getItem("barajas"));
 
   if (datos == null){
-    datos = {"barajas":[{"nombre":"Baraja 1","mazo":["Carta 1","Carta 2"],"descartes":["Carta Descartada 1"]},{"nombre":"Baraja 2","mazo":["Carta 3","Carta 4"],"descartes":["Carta Descartada 2"]},{"nombre":"Baraja 3","mazo":["Carta 5","Carta 6"],"descartes":["Carta Descartada 3"]}]};
+    datos = {"barajas":[{"nombre":"Baraja 1","mazo": cartasPoker,"descartes":[]},{"nombre":"Baraja 2","mazo":cartasPoker,"descartes":[]},{"nombre":"Baraja 3","mazo": cartasPoker,"descartes":[]}]};
   localStorage.setItem("barajas", JSON.stringify(datos));
   }
 
