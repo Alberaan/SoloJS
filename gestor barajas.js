@@ -130,6 +130,11 @@ function guardarCambiosDescartes(){
 function cargarDatosonLoad(){
   datos = JSON.parse(localStorage.getItem("barajas"));
 
+  if (datos == null){
+    datos = {"barajas":[{"nombre":"Baraja 1","mazo":["Carta 1","Carta 2"],"descartes":["Carta Descartada 1"]},{"nombre":"Baraja 2","mazo":["Carta 3","Carta 4"],"descartes":["Carta Descartada 2"]},{"nombre":"Baraja 3","mazo":["Carta 5","Carta 6"],"descartes":["Carta Descartada 3"]}]};
+  localStorage.setItem("barajas", JSON.stringify(datos));
+  }
+
   cargarDatos(datos);
 
 }
@@ -157,6 +162,7 @@ function clickBarajas(){
 
 function cargarBarajas(){
   let barajasElement = document.getElementById("seleccionar-baraja");
+  datos = JSON.parse(localStorage.getItem("barajas"));
 
   barajasElement.innerHTML = null;
 
