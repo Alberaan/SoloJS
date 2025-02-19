@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dice drop</title>
+    <title>Random Number Box</title>
     <style>
         body {
             margin: 0;
@@ -44,40 +44,60 @@
         }
         .buttons {
             text-align: center;
+            margin-top: 10px;
         }
+        .buttons button {
+            margin: 5px;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            color: white;
+        }
+        .d4 { background-color: red; }
+        .d6 { background-color: blue; }
+        .d8 { background-color: green; }
+        .d10 { background-color: purple; }
+        .d12 { background-color: orange; }
+        .d20 { background-color: brown; }
+        .clear { background-color: gray; color: black; }
     </style>
 </head>
 <body>
     <div id="top-bar">
         <a href="https://alberaan.github.io/SoloJS/index.html">SoloJS</a>
     </div>
-    <div id="title">Dice drop</div>
+    <div id="title">Drop Dice</div>
     <div id="container"></div>
     <div class="buttons">
-        <button onclick="addNumber()">Add Number</button>
-        <button onclick="clearNumbers()">Clear</button>
+        <button class="d4" onclick="rollDice(4)">D4</button>
+        <button class="d6" onclick="rollDice(6)">D6</button>
+        <button class="d8" onclick="rollDice(8)">D8</button>
+        <button class="d10" onclick="rollDice(10)">D10</button>
+        <button class="d12" onclick="rollDice(12)">D12</button>
+        <button class="d20" onclick="rollDice(20)">D20</button>
+        <button class="clear" onclick="clearNumbers()">Clear</button>
     </div>
 
     <script>
-        let counter = 1;
-        const container = document.getElementById('container');
-
-        function addNumber() {
-            const number = document.createElement('div');
-            number.className = 'number';
-            number.textContent = counter++;
+        function rollDice(sides) {
+            const result = Math.floor(Math.random() * sides) + 1;
+            const dice = document.createElement('div');
+            dice.className = `number`;
+            dice.textContent = result;
+            dice.style.color = getComputedStyle(document.querySelector(`.d${sides}`)).backgroundColor;
             
-            const maxX = container.clientWidth - 30;
-            const maxY = container.clientHeight - 20;
-            number.style.left = Math.random() * maxX + 'px';
-            number.style.top = Math.random() * maxY + 'px';
+            const maxX = document.getElementById('container').clientWidth - 40;
+            const maxY = document.getElementById('container').clientHeight - 40;
+            dice.style.left = Math.random() * maxX + 'px';
+            dice.style.top = Math.random() * maxY + 'px';
             
-            container.appendChild(number);
+            document.getElementById('container').appendChild(dice);
         }
 
         function clearNumbers() {
-            container.innerHTML = '';
-            counter = 1;
+            document.getElementById('container').innerHTML = '';
         }
     </script>
 </body>
