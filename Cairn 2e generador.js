@@ -47,16 +47,7 @@ function generarPersonaje() {
   document.getElementById("vestimenta").textContent = vestimenta;
   document.getElementById("virtud").textContent = virtud;
   document.getElementById("defecto").textContent = defecto;
-  document.getElementById("desgracia").textContent = desgracia;
-  document.getElementById("armadura").textContent = armadura;
-  document.getElementById("yelmosyescudos").textContent = yelmosyescudos;
-  document.getElementById("armas").textContent = armas;
-  document.getElementById("equipoparaexpediciones").textContent = equipoparaexpediciones;
-  document.getElementById("herramientas").textContent = herramientas;
-  document.getElementById("baratijas").textContent = baratijas ;
-  document.getElementById("objetosadicionales").textContent = objetosadicionales;
   document.getElementById("edad").textContent = edad;
-  document.getElementById("oro").textContent = oro;
 }
 
 function tirarDados() {
