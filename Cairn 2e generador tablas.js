@@ -561,15 +561,6 @@ const BACKSTORY_SURCADOR_DE_ARROYOS = {
   nombres: ["Gale", "Piper", "Brook", "Adair", "Stone", "Dale", "Wren", "Cliff", "Rain", "Robin"]
 };
 
-const tablaNombres = [
-];
-
-const tablaApellidos = [
-];
-
-const tablaTrasfondos = [
-];
-
 const tablaFisicos = [
 ];
 
