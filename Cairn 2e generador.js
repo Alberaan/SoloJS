@@ -50,7 +50,6 @@ function generarPersonaje() {
   document.getElementById("vestimenta").textContent = vestimenta;
   document.getElementById("virtud").textContent = virtud;
   document.getElementById("defecto").textContent = defecto;
-  document.getElementById("reputacion").textContent = reputacion;
   document.getElementById("desgracia").textContent = desgracia;
   document.getElementById("armadura").textContent = armadura;
   document.getElementById("yelmosyescudos").textContent = yelmosyescudos;
@@ -106,17 +105,10 @@ const total = BACKSTORIES.length;
     descripcion: base.descripcion,
     equipo: base.equipo,
     nombres: base.nombres,
-
-    detalle1: {
-      pregunta: base.pregunta1 || null,
-      index: detalle1Index,
-      texto: detalle1Texto
-    },
-
-    detalle2: {
-      pregunta: base.pregunta2 || null,
-      index: detalle2Index,
-      texto: detalle2Texto
+    pregunta1: base.pregunta1 || null,
+    pregunta2: base.pregunta2 || null,
+    detalle1: base.detalle1Text || null,
+    detalle1: base.detalle2Text || null,
     }
   };
 }
