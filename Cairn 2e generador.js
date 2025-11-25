@@ -1,13 +1,14 @@
 function generarPersonaje() {
   // Tirar 3d6 para cada atributo
-  const descripcion = ""
-  const equipo = ""
-  const pregunta1 = ""
-  const pregunta2 = ""
-  const detalle1 = ""
-  const detalle2 = ""
-  const nombre = "";
   const trasfondo = generarTrasfondo();
+  const descripcion = trasfondo.descripcion
+  const equipo = trasfondo.equipo
+  const pregunta1 = trasfondo.pregunta1
+  const pregunta2 = trasfondo.pregunta2
+  const detalle1 = trasfondo.detalle1
+  const detalle2 = trasfondo.detalle2
+  const nombre = trasfondo.nombre;
+  
   const fue = tirarDados();
   const des = tirarDados();
   const vol = tirarDados();
@@ -275,12 +276,4 @@ function generarEdad(){
   const dado2 = Math.floor(Math.random() * 20) + 1;
 
   return dado1 + dado2 + 10;
-}
-
-function generarOro(){
-  const dado1 = Math.floor(Math.random() * 6) + 1;
-  const dado2 = Math.floor(Math.random() * 6) + 1;
-  const dado3 = Math.floor(Math.random() * 6) + 1;
-
-  return dado1 + dado2 + dado3;
 }
