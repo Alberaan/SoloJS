@@ -75,29 +75,49 @@ function tirarDados() {
 }
 
 function generarTrasfondo(){
-  if (!Array.isArray(BACKSTORIES) || BACKSTORIES.length === 0) {
-    throw new Error("No hay trasfondos definidos en BACKSTORIES.");
+const total = BACKSTORIES.length;
 
-      // 1) Elegir trasfondo
-  const backstoryIndex = rollDie(BACKSTORIES.length) - 1;
+  // 1) Elegir trasfondo
+  const backstoryIndex = Math.floor(Math.random() * total);
   const base = BACKSTORIES[backstoryIndex];
 
-  // Seguridad básica por si algún trasfondo no tiene subtablas
-  const detalle1Array = base?.subtablas?.detalle1 || [];
-  const detalle2Array = base?.subtablas?.detalle2 || [];
+  // Arrays de subtablas
+  const detalle1Array = base.subtablas?.detalle1 || [];
+  const detalle2Array = base.subtablas?.detalle2 || [];
 
-    const detalle1Index = detalle1Array.length > 0
-    ? Math.floor(Math.random() * detalle1.length);
-    : null;
+  // 2) Tiradas
+  let detalle1Index = null;
+  if (detalle1Array.length > 0) {
+    detalle1Index = Math.floor(Math.random() * detalle1Array.length);
+  }
 
-  const detalle2Index = detalle2Array.length > 0
-    ? Math.floor(Math.random() * detalle2.length);
-    : null;
+  let detalle2Index = null;
+  if (detalle2Array.length > 0) {
+    detalle2Index = Math.floor(Math.random() * detalle2Array.length);
+  }
 
   const detalle1Texto = detalle1Index !== null ? detalle1Array[detalle1Index] : null;
   const detalle2Texto = detalle2Index !== null ? detalle2Array[detalle2Index] : null;
 
-  return base.label
+    return {
+    id: base.id,
+    label: base.label,
+    descripcion: base.descripcion,
+    equipo: base.equipo,
+    nombres: base.nombres,
+
+    detalle1: {
+      pregunta: base.pregunta1 || null,
+      index: detalle1Index,
+      texto: detalle1Texto
+    },
+
+    detalle2: {
+      pregunta: base.pregunta2 || null,
+      index: detalle2Index,
+      texto: detalle2Texto
+    }
+  };
 }
 
 function generarFisico(){
