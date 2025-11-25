@@ -1,14 +1,15 @@
 function generarPersonaje() {
   // Tirar 3d6 para cada atributo
   
-  const trasfondo = generarTrasfondo();
-  const descripcion = trasfondo.descripcion
-  const equipo = trasfondo.equipo
-  const pregunta1 = trasfondo.pregunta1
-  const pregunta2 = trasfondo.pregunta2
-  const detalle1 = trasfondo.detalle1
-  const detalle2 = trasfondo.detalle2
-  const nombre = trasfondo.nombre;
+  const trasfondoObject = generarTrasfondo();
+  const trasfondo = trasfondoObject.label
+  const descripcion = trasfondoObject.descripcion
+  const equipo = trasfondoObject.equipo
+  const pregunta1 = trasfondoObject.pregunta1
+  const pregunta2 = trasfondoObject.pregunta2
+  const detalle1 = trasfondoObject.detalle1
+  const detalle2 = trasfondoObject.detalle2
+  const nombre = trasfondoObject.nombre;
   
   const fue = tirarDados();
   const des = tirarDados();
