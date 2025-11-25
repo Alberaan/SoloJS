@@ -95,8 +95,8 @@ const total = BACKSTORIES.length;
     nombres: base.nombres,
     pregunta1: base.pregunta1 || null,
     pregunta2: base.pregunta2 || null,
-    detalle1: base.detalle1Text || null,
-    detalle1: base.detalle2Text || null,
+    detalle1: base.subtablas.detalle1Text || null,
+    detalle1: base.subtablas.detalle2Text || null,
     }
 }
 
