@@ -97,8 +97,8 @@ const total = BACKSTORIES.length;
     pregunta2: base.pregunta2 || null,
     //detalle1: base.subtablas.detalle1Text || null,
     //detalle1: base.subtablas.detalle2Text || null,
-      detalle1: base.subtablas.detalle2Texto || null,
-      detalle1: base.subtablas.detalle2Texto || null,
+      detalle1: base.subtablas.detalle1 || null,
+      detalle2: base.subtablas.detalle2 || null,
     }
 }
 
