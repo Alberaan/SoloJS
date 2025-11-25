@@ -1,11 +1,16 @@
 function generarPersonaje() {
   // Tirar 3d6 para cada atributo
+  const descripcion = ""
+  const equipo = ""
+  const pregunta1 = ""
+  const pregunta2 = ""
+  const detalle1 = ""
+  const detalle2 = ""
+  const nombre = "";
+  const trasfondo = generarTrasfondo();
   const fue = tirarDados();
   const des = tirarDados();
   const vol = tirarDados();
-  const nombre = generarNombre();
-  const apellido = generarApellido();
-  const trasfondo = generarTrasfondo();
   const fisico = generarFisico();
   const piel = generarPiel();
   const cabello = generarCabello();
@@ -19,10 +24,6 @@ function generarPersonaje() {
   const armadura = generarArmadura();
   const yelmosyescudos = generarYelmoYEscudo();
   const armas = generarArma();
-  const equipoparaexpediciones = generarEquipoParaExpediciones();
-  const herramientas = generarHerramienta();
-  const baratijas = generarBaratija();
-  const objetosadicionales = generarObjetosAdicional() + ", raciones para tres días, una antorcha";
   const edad = generarEdad();
   const oro = generarOro();
   
@@ -31,8 +32,14 @@ function generarPersonaje() {
   document.getElementById("des").textContent = des;
   document.getElementById("vol").textContent = vol;
   document.getElementById("nombre").textContent = nombre;
-  document.getElementById("apellido").textContent = apellido;
   document.getElementById("trasfondo").textContent = trasfondo;
+  document.getElementById("descripcion").textContent = descripcion;
+  document.getElementById("equipo").textContent = equipo;
+  document.getElementById("pregunta1").textContent = pregunta1;
+  document.getElementById("pregunta2").textContent = pregunta2;
+  document.getElementById("subtabla1").textContent = subtabla1;
+  document.getElementById("subtabla2").textContent = subtabla2;
+  
   document.getElementById("fisico").textContent = fisico;
   document.getElementById("piel").textContent = piel;
   document.getElementById("cabello").textContent = cabello;
