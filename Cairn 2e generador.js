@@ -110,7 +110,6 @@ const total = BACKSTORIES.length;
     detalle1: base.detalle1Text || null,
     detalle1: base.detalle2Text || null,
     }
-  };
 }
 
 function generarFisico(){
