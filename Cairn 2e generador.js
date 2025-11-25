@@ -13,20 +13,20 @@ function generarPersonaje() {
   const fue = tirarDados();
   const des = tirarDados();
   const vol = tirarDados();
-  const fisico = generarFisico();
-  const piel = generarPiel();
-  const cabello = generarCabello();
-  const rostro = generarRostro();
-  const voz = generarVoz();
-  const vestimenta = generarVestimenta();
-  const virtud = generarVirtud();
-  const defecto = generarDefecto();
-  const desgracia = generarDesgracia();
-  const armadura = generarArmadura();
-  const yelmosyescudos = generarYelmoYEscudo();
-  const armas = generarArma();
-  const edad = generarEdad();
-  const oro = generarOro();
+  //const fisico = generarFisico();
+  //const piel = generarPiel();
+  //const cabello = generarCabello();
+  //const rostro = generarRostro();
+  //const voz = generarVoz();
+  //const vestimenta = generarVestimenta();
+  //const virtud = generarVirtud();
+  //const defecto = generarDefecto();
+  //const desgracia = generarDesgracia();
+  //const armadura = generarArmadura();
+  //const yelmosyescudos = generarYelmoYEscudo();
+  //const armas = generarArma();
+  //const edad = generarEdad();
+  //const oro = generarOro();
   
   // Mostrar los valores en la página
   document.getElementById("fue").textContent = fue;
