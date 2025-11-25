@@ -23,9 +23,6 @@ function generarPersonaje() {
   //const virtud = generarVirtud();
   //const defecto = generarDefecto();
   //const desgracia = generarDesgracia();
-  //const armadura = generarArmadura();
-  //const yelmosyescudos = generarYelmoYEscudo();
-  //const armas = generarArma();
   //const edad = generarEdad();
   //const oro = generarOro();
   
