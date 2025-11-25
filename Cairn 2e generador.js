@@ -21,7 +21,6 @@ function generarPersonaje() {
   const vestimenta = generarVestimenta();
   const virtud = generarVirtud();
   const defecto = generarDefecto();
-  const reputacion = generarReputacion();
   const desgracia = generarDesgracia();
   const armadura = generarArmadura();
   const yelmosyescudos = generarYelmoYEscudo();
@@ -181,14 +180,6 @@ function generarDefecto(){
   defectos = tablaDefectos;
   const indiceAleatorio = Math.floor(Math.random() * defectos.length);
   const elementoAleatorio = defectos[indiceAleatorio];
-
-  return elementoAleatorio;
-}
-
-function generarReputacion(){
-  reputaciones = tablaReputaciones;
-  const indiceAleatorio = Math.floor(Math.random() * reputaciones.length);
-  const elementoAleatorio = reputaciones[indiceAleatorio];
 
   return elementoAleatorio;
 }
