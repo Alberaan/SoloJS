@@ -37,8 +37,8 @@ function generarPersonaje() {
   document.getElementById("equipo").textContent = equipo;
   document.getElementById("pregunta1").textContent = pregunta1;
   document.getElementById("pregunta2").textContent = pregunta2;
-  document.getElementById("subtabla1").textContent = subtabla1;
-  document.getElementById("subtabla2").textContent = subtabla2;
+  document.getElementById("detalle1").textContent = detalle1;
+  document.getElementById("detalle2").textContent = detalle2;
   
   document.getElementById("fisico").textContent = fisico;
   document.getElementById("piel").textContent = piel;
@@ -73,28 +73,30 @@ function tirarDados() {
   return resultado;
 }
 
-function generarNombre(){
-  nombres = tablaNombres;
-  const indiceAleatorio = Math.floor(Math.random() * nombres.length);
-  const elementoAleatorio = nombres[indiceAleatorio];
-
-  return elementoAleatorio;
-}
-
-function generarApellido(){
-  apellidos = tablaApellidos;
-  const indiceAleatorio = Math.floor(Math.random() * apellidos.length);
-  const elementoAleatorio = apellidos[indiceAleatorio];
-
-  return elementoAleatorio;
-}
-
 function generarTrasfondo(){
-  trasfondos = tablaTrasfondos;
-  const indiceAleatorio = Math.floor(Math.random() * trasfondos.length);
-  const elementoAleatorio = trasfondos[indiceAleatorio];
+  if (!Array.isArray(BACKSTORIES) || BACKSTORIES.length === 0) {
+    throw new Error("No hay trasfondos definidos en BACKSTORIES.");
 
-  return elementoAleatorio;
+      // 1) Elegir trasfondo
+  const backstoryIndex = rollDie(BACKSTORIES.length) - 1;
+  const base = BACKSTORIES[backstoryIndex];
+
+  // Seguridad básica por si algún trasfondo no tiene subtablas
+  const detalle1Array = base?.subtablas?.detalle1 || [];
+  const detalle2Array = base?.subtablas?.detalle2 || [];
+
+    const detalle1Index = detalle1Array.length > 0
+    ? Math.floor(Math.random() * detalle1.length);
+    : null;
+
+  const detalle2Index = detalle2Array.length > 0
+    ? Math.floor(Math.random() * detalle2.length);
+    : null;
+
+  const detalle1Texto = detalle1Index !== null ? detalle1Array[detalle1Index] : null;
+  const detalle2Texto = detalle2Index !== null ? detalle2Array[detalle2Index] : null;
+
+  return base.label
 }
 
 function generarFisico(){
