@@ -586,27 +586,19 @@ const BACKSTORIES = [
   BACKSTORY_SURCADOR_DE_ARROYOS
 ];
 
-const tablaFisicos = [
-];
+const tablaFisicos = ["Atlético", "Bajo", "Enorme", "Escuálido", "Escultural", "Flácido", "Gordo", "Larguirucho", "Musculoso", "Robusto"];
 
-const tablaPieles = [
-];
+const tablaPieles = ["Bronceada", "Con alguna mancha", "Con cicatrices", "Con marca de nacimiento", "Dedos palmeados", "Envejecida", "Grasosa", "Rosácea", "Tatuada", "Tersa"];
 
-const tablaCabellos = [
-];
+const tablaCabellos = ["Calvo", "Encrespado", "Graso", "Largo", "Ondulado", "Escaso", "Rizado", "Sucio", "Suntuoso", "Trenzado"];
 
-const tablaRostros = [
-];
+const tablaRostros = ["Afilado", "Alargado", "Cincelado", "Cuadrado", "De mejillas hundidas", "Desfigurado", "Huesudo", "Pálido", "Perfecto", "Ratonil"];
 
-const tablaVoces = [
-];
+const tablaVoces = ["Cavernosa", "Clara", "Directa", "Enigmática", "Estridente", "Formal", "Monótona", "Resonante", "Susurrante", "Tartamuda"];
 
-const tablaVestimentas = [
-];
+const tablaVestimentas = ["Anticuada", "Asquerosa", "De otro lugar", "Desaliñada", "Deshilachada", "Elegante", "Ensangrentada", "Maloliente", "Manchada", "De uniforme"];
 
-const tablaVirtudes = [
-];
+const tablaVirtudes = ["Ambicioso", "Disciplinado", "Honorable", "Humilde", "Misericordioso", "Precavido", "Sereno", "Sociable", "Tolerante", "Valiente"];
 
-const tablaDefectos = [
-];
+const tablaDefectos = ["Agresivo", "Amargado", "Avaricioso", "Codicioso", "Engreído", "Mentiroso", "Nervioso", "Perezoso", "Rudo", "Vengativo"];
 
