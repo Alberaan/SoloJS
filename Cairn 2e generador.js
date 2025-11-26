@@ -22,7 +22,9 @@ function generarPersonaje() {
   const vestimenta = generarVestimenta();
   const virtud = generarVirtud();
   const defecto = generarDefecto();
-  //const edad = generarEdad();
+  const vinculo = generarVinculo();
+  const presatio = generarPresagio();
+  const edad = generarEdad();
   //const oro = generarOro();
   
   // Mostrar los valores en la página
@@ -47,6 +49,8 @@ function generarPersonaje() {
   document.getElementById("virtud").textContent = virtud;
   document.getElementById("defecto").textContent = defecto;
   document.getElementById("edad").textContent = edad;
+  document.getElementById("presagio").textContent = presagio;
+  document.getElementById("vinculo").textContent = vinculo;
 }
 
 function tirarDados() {
@@ -254,10 +258,18 @@ function generarObjetosAdicional(){
   return "Error";
 }
 
-function generarLibroDeHechizos(){
-  hechizos = tablaHechizos;
-  const indiceAleatorio = Math.floor(Math.random() * hechizos.length);
-  const elementoAleatorio = baratijas[indiceAleatorio];
+function generarVinculo(){
+  vinculos = tablaVinculos;
+  const indiceAleatorio = Math.floor(Math.random() * vinculos.length);
+  const elementoAleatorio = vinvulos[indiceAleatorio];
+
+  return elementoAleatorio;
+}
+
+function generarPresagio(){
+  vinculos = tablaPresagioss;
+  const indiceAleatorio = Math.floor(Math.random() * presagios.length);
+  const elementoAleatorio = presagios[indiceAleatorio];
 
   return elementoAleatorio;
 }
