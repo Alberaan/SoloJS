@@ -92,7 +92,7 @@ const total = BACKSTORIES.length;
     label: base.label,
     descripcion: base.descripcion,
     equipo: base.equipo,
-    nombre: Math.floor(Math.random() * base.nombres.length),
+    nombre: base.nombres[Math.floor(Math.random() * base.nombres.length)],
     pregunta1: base.pregunta1 || null,
     pregunta2: base.pregunta2 || null,
     detalle1: base.subtablas.detalle1 || null,
