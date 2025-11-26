@@ -92,13 +92,11 @@ const total = BACKSTORIES.length;
     label: base.label,
     descripcion: base.descripcion,
     equipo: base.equipo,
-    nombres: base.nombres,
+    nombre: Math.floor(Math.random() * base.nombres.length),
     pregunta1: base.pregunta1 || null,
     pregunta2: base.pregunta2 || null,
-    //detalle1: base.subtablas.detalle1Text || null,
-    //detalle1: base.subtablas.detalle2Text || null,
-      detalle1: base.subtablas.detalle1 || null,
-      detalle2: base.subtablas.detalle2 || null,
+    detalle1: base.subtablas.detalle1 || null,
+    detalle2: base.subtablas.detalle2 || null,
     }
 }
 
