@@ -267,7 +267,7 @@ function generarVinculo(){
 }
 
 function generarPresagio(){
-  vinculos = tablaPresagioss;
+  vinculos = tablaPresagios;
   const indiceAleatorio = Math.floor(Math.random() * presagios.length);
   const elementoAleatorio = presagios[indiceAleatorio];
 
