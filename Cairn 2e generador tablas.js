@@ -602,3 +602,50 @@ const tablaVirtudes = ["Ambicioso", "Disciplinado", "Honorable", "Humilde", "Mis
 
 const tablaDefectos = ["Agresivo", "Amargado", "Avaricioso", "Codicioso", "Engreído", "Mentiroso", "Nervioso", "Perezoso", "Rudo", "Vengativo"];
 
+const tablaVinculos = [
+  "Heredaste una gema única (500 mo, fría y quebradiza) de un pariente fallecido hace tiempo. Te la entregaron con una advertencia: si derrochas tus nuevas riquezas, te cobrarán una deuda olvidada hace mucho tiempo.",
+  "Un primo lejano te dejó una pequeña herencia. Tienes 20 mo y una extraña brújula (Insignificante) que apunta siempre hacia algo en lo profundo del Bosque.",
+  "Llevas siempre contigo un retrato dibujado a mano (Insignificante) de un amor pasado, que desapareció en el Bosque. Sabes que sigue con vida.",
+  "Encontraste un prisma de cristal (Insignificante) enterrado en la tierra. Al mirarlo a trasluz, muestra imágenes de un lugar desconocido en lo profundo del Bosque. A veces sientes una presencia devolviéndote la mirada.",
+  "Ayudaste a una néyade en dificultades a salir de un río angosto. A cambio, te entregó un poco de musgo plateado (Insignificante). Trágalo por completo cerca del agua, la criatura vendrá a pagar su deuda.",
+  "Has heredado un diario antiguo, encuadernado en corteza de árbol. Cada noche, sus páginas están llenas de los acontecimientos del día, escritos con crudeza desde la perspectiva del diario. La escritura es tosca, pero precisa.",
+  "Guardas un secreto familiar que lleva mucho tiempo oculto. Tienes la mitad de una llave antigua (Insignificante). Dicen que si se une con su otra mitad, abre un Portal en cualquier puerta.",
+  "Recibiste una carta (Insignificante) que presenta pruebas irrefutables de tu verdadera ascendencia, noble entre las hadas. El texto también especifica una fecha y un lugar donde te encontrarás con quien la escribió, en lo profundo del Bosque.",
+  "Tienes una gran deuda con un miembro de la nobleza y llevas un anillo con su emblema (Insignificante), que sirve como prueba de su protección, así como de tu obligación.",
+  "Has consumido un espíritu travieso que causa estragos en tus entrañas y te exige que lo devuelvas a su hogar, en las profundidades del Bosque. Ocupa un espacio en tu Inventario, pero absorbe una Fatiga por día. El espíritu te mantiene con vida (por ahora).",
+  "Una vez, un cuentacuentos itinerante te contó historias de un gran tesoro escondido en las profundidades del Bosque. Creíste que no eran más que cuentos para niños, hasta que te dieron un mapa enrollado (Insignificante) marcado con una X.",
+  "En uno de tus viajes, conociste a un cazador moribundo que te pidió que entregues un mensaje a sus seres queridos. Tienes una carta (Insignificante), sellada con savia de árbol. Está dirigida al Señor del Invierno.",
+  "Encontraste una bestia herida en el Bosque, pero decidiste no ayudarla. Ahora se te aparece en todas partes, especialmente cuando estás solo. La bestia se muestra triste, pero no enojada. No caes en Pánico al actuar en solitario.",
+  "Le prometiste a una amistad de tu infancia que le traerías un regalo especial, algo único en el mundo. Tienes una pulsera (Insignificante) tejida con hilo y flores silvestres.",
+  "Te enfrentaste con una criatura del Bosque y te echó la maldición del corazón de piedra. Cada mes que pasa, la piedra se vuelve más pesada, ocupando un espacio más en tu Inventario. Hasta que tu deuda sea saldada, no podrás morir definitivamente.",
+  "Tallaste un silbato (Insignificante) de una rama perteneciente al Señor del Roble. Lo que hiciste no pasó desapercibido. Tampoco puedes deshacerte del silbato.",
+  "La Brigada del Amanecer hizo un servicio a tu familia, entregando una flor, de color rojo sangre, seca (Insignificante) como prueba. Cuando la flor se torne blanca, se deberá devolver el favor.",
+  "Un día, un juglar visitó tu casa, la llenó de historias y canciones. Se fue un día sin dar más explicación, dejando atrás solo un laúd en miniatura. Algo resuena en su interior.",
+  "Se te apareció en sueños un cuervo blanco con una ramita en la boca. Te despertaste con la ramita (Insignificante) en la mano. Crees que te trae suerte. Huele ligeramente a azufre.",
+  "Uno de tus antepasados hizo daño a una bruja del musgo, la cual maldijo su linaje. Tu rostro hace que los espejos se rompan en pedazos. Has notado que los fragmentos a veces pueden revelar ilusiones."
+];
+
+const tablaPresagios = [
+  "Las aguas, otrora ricas y vivificantes, de un río se han vuelto negras y pútridas, contaminando la tierra y enfermando a quienes beben de ellas. Un anciano de la aldea señala una profanación reciente como la causa, pero la mayoría no hace caso de sus palabras.",
+  "Parece que este año el invierno ha llegado demasiado rápido, las heladas y la nieve han hecho su aparición mucho antes de lo esperado. Se habla de un patrón en la escarcha que se forma en las ventanas, los estanques y las grietas del suelo. Casi parece un mapa.",
+  "Una niebla espesa y antinatural ha comenzado a invadir una antigua floresta sagrada. Se dice que es obra de un gran espíritu residente, enfadado por la deforestación cercana.",
+  "El cielo nocturno se vuelve más oscuro cada noche, como si las estrellas desaparecieran una tras otra. Los rumores sobre criaturas infernales que capturan a los granjeros y los arrastran hacia las Raíces corren como pólvora. Los ancianos del pueblo creen que ambas cosas están relacionadas.",
+  "Los pájaros cantores han caído en el silencio últimamente. Los cazadores afirman que se ha visto una figura espectral vagando por el Bosque, mirando con nostalgia a todo aquel que se encuentra.",
+  "Han aparecido extrañas piedras con forma de lágrima en toda la región, lo que ha provocado una especie de 'fiebre del oro' entre joyeros y ladrones. Los lugareños creen que son las lágrimas de la propia tierra, que lloran por una gran tragedia que está por venir.",
+  "Diferentes plagas se agrupan mordisqueando los bordes de los sueños y los granjeros hablan de un fuerte zumbido que emana de las profundidades del Bosque. Dicen que el sonido se está acercando.",
+  "Hay un pueblo conocido por su imponente 'Árbol Madre', del que se dice que guarda los secretos del lugar en sus ramas. Recientemente, ha comenzado a sangrar savia roja, lo que preocupa a los ancianos.",
+  "La luna se torna de un profundo color carmesí, bañando la noche con una inquietante luz roja como la sangre. Algunos dicen que anuncia una época de caos y conflictos, a medida que se diluyen los límites entre el Bosque y el reino de los mortales.",
+  "Han aparecido grietas extrañas en el cielo nocturno, revelando un torbellino de luz y color. Algunos dicen que la división entre los reinos está en su punto más débil en siglos y temen lo que pueda surgir del otro lado.",
+  "Una flor que florece de noche y se creía extinta está brotando por todo el Bosque. Su aroma es embriagador, pero también provoca pesadillas muy vívidas.",
+  "El ganado local se ha vuelto cada vez más inquieto y difícil de controlar. Un viejo pastor dice que se debe a un aullido inquietante que emana del Bosque cada luna llena.",
+  "Enjambres de insectos huyen del Bosque en masa, destruyendo las estructuras de madera a su paso. El sonido de sus alas tararea una melodía familiar mientras pasan por encima, como si fuera una canción infantil olvidada.",
+  "Los cazadores hablan de una maldición que recae sobre quien mate a cualquier animal que tenga un mechón de pelaje blanco: poco después de hacerlo, son encontrados muertos en sus casas. El problema es que cada día hay menos criaturas para cazar.",
+  "La gente dice que se oye una risa débil resonando en los pozos de toda la ciudad, y que por la noche esos ecos se transforman en sollozos.",
+  "Las constelaciones han comenzado a cambiar lentamente en el cielo nocturno, formando patrones desconocidos que han desconcertado a los astrónomos y a los eruditos. Incluso los animales parecen perturbados.",
+  "Un árbol antiguo, en el corazón de un pueblo soñoliento, se secó y murió de repente, a pesar de no mostrar signos de enfermedad. Después de cortar su tronco, se encontró una mano ensangrentada en su interior.",
+  "Las estatuas llevan meses llorando sangre y los vientres de la aldea permanecen estériles desde entonces. La única excepción ha sido el nacimiento de un niño, escondido por ancianos, quienes se encuentran muertos de miedo por lo sucedido.",
+  "La fauna local se comporta de forma extraña, mostrando una agresividad exacerbada o huyendo del área por completo. Los cazadores hablan de una figura sombría que deambula por el Bosque, atrayendo a los animales.",
+  "Las ciudades fronterizas se han vuelto tumultuosas en las últimas semanas, después de varios relatos sobre una figura vestida de rojo que aparece en los sueños de los niños, pronunciando la misma advertencia: se acerca un fuego, y lo consumirá todo."
+]
+
+
