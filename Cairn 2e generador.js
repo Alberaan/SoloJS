@@ -14,15 +14,14 @@ function generarPersonaje() {
   const fue = tirarDados();
   const des = tirarDados();
   const vol = tirarDados();
-  //const fisico = generarFisico();
-  //const piel = generarPiel();
-  //const cabello = generarCabello();
-  //const rostro = generarRostro();
-  //const voz = generarVoz();
-  //const vestimenta = generarVestimenta();
-  //const virtud = generarVirtud();
-  //const defecto = generarDefecto();
-  //const desgracia = generarDesgracia();
+  const fisico = generarFisico();
+  const piel = generarPiel();
+  const cabello = generarCabello();
+  const rostro = generarRostro();
+  const voz = generarVoz();
+  const vestimenta = generarVestimenta();
+  const virtud = generarVirtud();
+  const defecto = generarDefecto();
   //const edad = generarEdad();
   //const oro = generarOro();
   
