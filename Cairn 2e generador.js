@@ -25,6 +25,8 @@ function generarPersonaje() {
   const vinculo = generarVinculo();
   const presagio = generarPresagio();
   const edad = generarEdad();
+  const pg = generarPg();
+
   //const oro = generarOro();
   
   // Mostrar los valores en la página
@@ -51,6 +53,7 @@ function generarPersonaje() {
   document.getElementById("edad").textContent = edad;
   document.getElementById("presagio").textContent = presagio;
   document.getElementById("vinculo").textContent = vinculo;
+  document.getElementById("pg").textContent = pg;
 }
 
 function tirarDados() {
@@ -272,6 +275,10 @@ function generarPresagio(){
   const elementoAleatorio = presagios[indiceAleatorio];
 
   return elementoAleatorio;
+}
+
+function generarPg(){
+  return Math.floor(Math.random() * 6) + 1;
 }
 
 function generarEdad(){
