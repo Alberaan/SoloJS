@@ -23,7 +23,7 @@ function generarPersonaje() {
   const virtud = generarVirtud();
   const defecto = generarDefecto();
   const vinculo = generarVinculo();
-  const presatio = generarPresagio();
+  const presagio = generarPresagio();
   const edad = generarEdad();
   //const oro = generarOro();
   
@@ -261,7 +261,7 @@ function generarObjetosAdicional(){
 function generarVinculo(){
   vinculos = tablaVinculos;
   const indiceAleatorio = Math.floor(Math.random() * vinculos.length);
-  const elementoAleatorio = vinvulos[indiceAleatorio];
+  const elementoAleatorio = vinculos[indiceAleatorio];
 
   return elementoAleatorio;
 }
