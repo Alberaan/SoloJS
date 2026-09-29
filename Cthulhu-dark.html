@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cthulhu Dark · Diario del investigador</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@400;600&display=swap">
+<style>
+:root{--bg:#0a0c0b;--pn:#121715;--p2:#19211d;--ln:#27352d;--tx:#d9ddd0;--mu:#8a9588;--gr:#72a06a;--gd:#c4a35f;--rd:#b0413a;--bl:#8fb0c9;--fh:'Cinzel',Georgia,serif;--fb:'Inter',system-ui,sans-serif;--fm:ui-monospace,Menlo,Consolas,monospace;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:dark}
+@media(prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#e8e1cf;--pn:#f2ecdc;--p2:#e3dbc6;--ln:#c4b998;--tx:#1f261f;--mu:#5d6657;--gr:#3f6b3a;--gd:#7c5f18;--rd:#8f2b25;--bl:#2d5578;color-scheme:light}}
+:root[data-theme="light"]{--bg:#e8e1cf;--pn:#f2ecdc;--p2:#e3dbc6;--ln:#c4b998;--tx:#1f261f;--mu:#5d6657;--gr:#3f6b3a;--gd:#7c5f18;--rd:#8f2b25;--bl:#2d5578;color-scheme:light}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:radial-gradient(ellipse at 50% -10%,#3d5a4c40,transparent 60%),var(--bg);color:var(--tx);font:14px/1.5 var(--fb);min-height:100vh}
+.top{display:flex;align-items:center;padding:8px 16px;background:var(--pn);border-bottom:1px solid var(--ln)}
+.top a{font:700 17px var(--fh);letter-spacing:.08em;color:var(--gd);text-decoration:none}.top a:hover{text-decoration:underline}.top a:focus-visible{outline:2px solid var(--gd);outline-offset:3px}
+header{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 16px;padding:14px 16px 4px}
+h1{font:700 30px var(--fh);letter-spacing:.06em;margin:0;color:var(--gd)}
+header small{color:var(--mu);flex:1}
+main{display:grid;grid-template-columns:290px minmax(0,1fr) 330px;gap:12px;padding:12px}
+@media(max-width:1000px){main{grid-template-columns:minmax(0,1fr)}}
+.c{background:var(--pn);border:1px solid var(--ln);border-radius:10px;padding:12px;margin-bottom:12px}
+h2{font:600 15px var(--fh);letter-spacing:.08em;color:var(--gd);margin:0 0 8px}
+button,input,textarea,select{font:inherit;color:var(--tx)}
+button{background:var(--p2);border:1px solid var(--ln);border-radius:6px;padding:6px 10px;cursor:pointer;margin:0 4px 6px 0}
+button:hover{border-color:var(--gd)}button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:2px solid var(--gd);outline-offset:1px}
+button.on{border-color:var(--gd);color:var(--gd)}button.dim{opacity:.4}
+input,textarea,select{width:100%;box-sizing:border-box;background:var(--bg);border:1px solid var(--ln);border-radius:6px;padding:6px 8px;margin-bottom:6px}
+input[type=checkbox]{width:auto}
+kbd{font:11px var(--fm);border:1px solid var(--ln);border-radius:4px;padding:0 4px;color:var(--mu)}
+.mu{color:var(--mu);font-size:12px;margin:6px 0}
+.mr{display:flex;gap:10px;align-items:center;margin-bottom:6px}
+.pp{display:flex;gap:4px;flex:1}.pp button{flex:1;padding:6px 0;margin:0}
+.pp button.f{background:var(--rd);border-color:var(--rd);color:#fff}
+.die{width:46px;height:46px;display:grid;place-items:center;font:700 22px var(--fh);border:1px solid var(--ln);border-radius:8px;background:var(--p2);animation:rl .5s;flex:none}
+.die.m{border-color:var(--gr);color:var(--gr);box-shadow:0 0 14px #72a06a55}
+.die.top{outline:2px solid var(--gd)}
+@keyframes rl{from{transform:rotate(-140deg) scale(.5);opacity:0}}
+@keyframes sh{20%{transform:translateX(-8px)}40%{transform:translateX(8px)}60%{transform:translateX(-5px)}}
+@media(prefers-reduced-motion:reduce){.die,.box{animation:none!important}}
+.big{width:100%;font:700 19px var(--fh);letter-spacing:.06em;padding:14px;margin:10px 0 4px;background:var(--rd);border-color:var(--rd);color:#fff}.big:hover{border-color:var(--gd)}.big kbd{color:#fff;border-color:#fff8}
+.sec{display:flex;flex-wrap:wrap;border-top:1px solid var(--ln);padding-top:8px;margin-top:10px}
+#rs .dr{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}
+#rs b{font:600 16px var(--fh);color:var(--gd)}
+#lg{height:62vh;min-height:280px;overflow:auto;font:13px/1.65 var(--fm);padding:2px 4px}
+.e{display:flex;gap:6px;align-items:baseline;position:relative}.e b{color:var(--gd);font-weight:400}
+.tx{flex:1;min-width:0;white-space:pre-wrap;overflow-wrap:anywhere;border-radius:3px;padding:0 3px;outline:none;cursor:text}
+.tx:hover{background:var(--p2)}.tx:focus{background:var(--p2);box-shadow:0 0 0 1px var(--gd)}
+.dx{opacity:0;padding:0 6px;margin:0;font-size:11px;line-height:1.5;border:0;background:transparent;color:var(--mu)}
+.e:hover .dx,.e:focus-within .dx,.dx:focus-visible{opacity:1}.dx:hover{color:var(--rd)}
+@media(hover:none){.dx{opacity:.6}}.e.gm{color:var(--gr)}.e.q,.e.a{color:var(--bl)}.e.d{color:var(--mu)}
+.e.sc{font:700 15px var(--fh);color:var(--gd);margin-top:10px}.e.clk{color:var(--rd)}.e.note{color:var(--mu);font-style:italic}
+.ib{display:grid;grid-template-columns:150px 1fr auto;gap:6px;margin-top:8px}.ib>*{margin:0}
+.ck{display:flex;gap:10px;align-items:center;margin-bottom:8px}
+.w{fill:transparent;stroke:var(--ln);stroke-width:1.5;cursor:pointer}.w.f{fill:var(--rd)}.w:hover{stroke:var(--gd)}
+.sr2{display:grid;grid-template-columns:1fr 56px auto;gap:4px}.sr2>*{margin:0}
+.sr{display:grid;grid-template-columns:1fr 54px 54px auto;gap:4px;align-items:center}.sr>*{margin:0}
+.modal{position:fixed;inset:0;background:#000b;display:grid;place-items:center;padding:16px;z-index:9}.modal[hidden]{display:none}
+.box{background:var(--pn);border:1px solid var(--gd);border-radius:10px;padding:16px;max-width:560px;width:100%;max-height:85vh;overflow:auto}
+.box.br{border-color:var(--rd);animation:sh .6s}.box h2{font-size:18px}
+#ts{position:fixed;left:50%;bottom:calc(16px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--p2);border:1px solid var(--gd);border-radius:8px;padding:8px 14px;z-index:10}
+#ts:empty{display:none}
+#oc{margin:8px 0;padding:8px 10px;border-left:2px solid var(--gd)}#oc:empty{display:none}#oc b{font:600 17px var(--fh);color:var(--gd);display:block}#oc span{display:block;color:var(--tx)}
+</style></head><body>
+<nav class="top"><a href="https://alberaan.github.io/SoloJS/index.html" target="_blank" rel="noopener noreferrer">SoloJS</a></nav>
+<header><h1>Cthulhu Dark</h1><small>Diario del investigador en solitario, en formato Lonelog</small>
+<span><button data-a="exp">Exportar a Markdown <kbd>E</kbd></button><button data-a="help">Atajos <kbd>?</kbd></button></span></header>
+<main>
+<div>
+<section class="c"><h2>Investigador</h2><input id="pn" placeholder="Nombre"><input id="po" placeholder="Ocupación"><textarea id="pd" rows="3" placeholder="Descripción"></textarea><button id="nw" data-a="nw">Nuevo investigador</button></section>
+<section class="c"><h2>Locura</h2><div class="mr"><div class="die m" id="mv"></div><div class="pp" id="pp"></div></div><p class="mu" id="ml"></p>
+<button data-a="mc">Tirada de Locura <kbd>L</kbd></button><button data-a="kn">Eliminar conocimiento <kbd>K</kbd></button></section>
+<section class="c"><h2>Relojes</h2><div id="ck"></div><div class="sr2"><input id="cn" placeholder="Nombre del reloj"><input id="cs" type="number" min="2" max="12" value="4" title="Secciones"><button data-a="addck">Crear</button></div></section>
+</div>
+<div><section class="c"><h2>Diario</h2><p class="mu">Haz clic en una línea para editarla. Pasa el cursor por encima para borrarla con la ✕. Si la dejas vacía, se elimina.</p><div id="lg"></div>
+<div class="ib"><select id="ty"><option value="act">@ Acción</option><option value="q">? Oráculo</option><option value="a">-> Resultado</option><option value="gm">=> Consecuencia</option><option value="d">d: Dado</option><option value="sc">S Escena</option><option value="note"># Nota</option></select><input id="li" placeholder="Texto. Admite prefijos @ ? -> => d:"><button data-a="add">Añadir</button></div></section></div>
+<div>
+<section class="c"><h2>Tirada</h2>
+<p class="mu">Elige los dados de la tirada</p><div class="cfg"><button data-a="tg" data-k="h">Humano <kbd>1</kbd></button><button data-a="tg" data-k="o">Ocupación <kbd>2</kbd></button><button data-a="tg" data-k="m">Locura <kbd>3</kbd></button><button data-a="tg" data-k="x">Fuera de lo humano <kbd>X</kbd></button><button data-a="tg" data-k="inv">Investigación <kbd>I</kbd></button><button data-a="tg" data-k="nec">Necesaria para avanzar <kbd>N</kbd></button></div>
+<button class="big" data-a="roll">Tirar los dados <kbd>R</kbd></button>
+<div id="rs"></div>
+<div class="sec"><p class="mu" style="width:100%;margin:0 0 6px">Tras la tirada</p><button data-a="rep">Repetir <kbd>⇧R</kbd></button><button data-a="fail">Proponer fallo <kbd>F</kbd></button></div>
+<div id="ff" hidden><input id="fd" placeholder="¿Cómo podrías fallar?"><button data-a="fr">Tirar oposición</button></div>
+<div class="sec"><p class="mu" style="width:100%;margin:0 0 6px">Tirada de varios bandos</p><button data-a="cm">Cooperar o competir <kbd>M</kbd></button></div><p class="mu">Luchar contra una criatura es morir: huye o escóndete. Un éxito alto nunca te salta el escenario.</p></section>
+<section class="c"><h2>Oráculo de tarot</h2><input id="oq" placeholder="Pregunta (Enter para sacar carta)"><button data-a="orc">Sacar carta <kbd>O</kbd></button><button data-a="sh">Barajar</button><div id="oc"></div><p class="mu" id="om"></p></section>
+<section class="c"><h2>Cuaderno de campaña</h2><p class="mu">Una línea por entrada. Usa "Nombre - detalle".</p>
+<textarea id="np" rows="3" placeholder="Personajes"></textarea><textarea id="nl" rows="3" placeholder="Lugares"></textarea><textarea id="no" rows="3" placeholder="Objetos"></textarea></section>
+</div></main>
+<div class="modal" id="md" hidden></div><div id="ts" role="status"></div>
+<script>
+const $=s=>document.querySelector(s),d6=()=>1+Math.floor(Math.random()*6),esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const K='cthulhuDark1',P={act:'@',gm:'=>',q:'?',a:'->',d:'d:',note:'#',clk:'',sc:''},N={h:'Humano',o:'Ocupación',m:'Locura'};
+const RA=['Éxito mínimo, con problemas','Éxito escaso','Éxito con complicaciones','Éxito con algún indicio','Muy bien hecho','Resultado brillante'];
+const RI=['Lo mínimo para seguir adelante','Un poco más que lo mínimo','Bastante, pero incompleto','Lo que hallaría un investigador competente','Todo lo humanamente posible','Un vislumbre más allá de lo humano'];
+let S=null;try{S=JSON.parse(localStorage.getItem(K))}catch(e){}
+S=Object.assign({pc:{n:'',o:'',d:''},mad:1,r5:false,ret:false,sc:0,log:[],clk:[],nt:{p:'',l:'',o:''}},S||{});
+let T={h:1,o:1,m:0,x:0,inv:0,nec:0},last=null,SD=[{n:'Yo',c:2,m:1,e:0},{n:'Oposición',c:2,m:1,e:0}],cfm=0;
+const save=()=>{try{localStorage.setItem(K,JSON.stringify(S))}catch(e){}};
+let tt;const toast=m=>{$('#ts').textContent=m;clearTimeout(tt);tt=setTimeout(()=>$('#ts').textContent='',3200)};
+function lg(t,x){S.log.push({t,x});save();rl()}
+function rl(k){const l=$('#lg'),s=l.scrollTop;l.innerHTML=S.log.map((e,i)=>`<div class="e ${e.t}">${P[e.t]?'<b>'+P[e.t]+'</b> ':''}<span class="tx" contenteditable="true" spellcheck="false" data-i="${i}">${esc(e.x)}</span><button class="dx" data-a="dx" data-i="${i}" aria-label="Borrar entrada" title="Borrar entrada">✕</button></div>`).join('');l.scrollTop=k?s:l.scrollHeight}
+function op(h,c){const m=$('#md');m.innerHTML=`<div class="box ${c||''}">${h}</div>`;m.hidden=false}
+const cl=()=>{$('#md').hidden=true};
+function rm(){$('#mv').textContent=S.mad;$('#pp').innerHTML=[1,2,3,4,5,6].map(i=>`<button data-a="sm" data-v="${i}" class="${i<=S.mad?'f':''}" aria-label="Locura ${i}">${i}</button>`).join('');
+$('#ml').textContent=S.ret?'Investigador retirado.':S.mad>=6?'Tu mente se ha quebrado.':S.r5?'Puedes eliminar conocimiento de los Mitos.':'Empieza en 1. Si tu dado la supera, sube.'}
+function sm(v){v=Math.max(1,Math.min(6,v));S.mad=v;if(v>=5)S.r5=true;save();rm();if(v==6&&!S.ret)brk()}
+function brk(){op(`<h2>Tu mente se quiebra</h2><p>Locura 6. Toda la atención se centra en este momento: lucha, grita, corre o derrúmbate. Luego retira al investigador del juego.</p><button data-a="keep">Interpretar un rato más</button><button data-a="ret">Retirar al personaje</button>`,'br');lg('note','Locura 6: la mente del investigador se quiebra')}
+function mc(){if(S.ret)return toast('El investigador está retirado');if(S.mad>=6)return toast('Ya has enloquecido');const r=d6(),w=r>S.mad;
+lg('d',`Locura [d6=${r} vs ${S.mad}] -> ${w?'no mantienes la calma, Locura '+S.mad+'>'+(S.mad+1)+'. Interpreta el terror':'mantienes la calma'}`);if(w)sm(S.mad+1)}
+function kn(){if(S.ret||S.mad>=6||!S.r5)return toast('Solo si tu Locura llegó a 5 y aún no es 6');const r=d6(),w=r<S.mad;
+lg('d',`Eliminar conocimiento [d6=${r} vs ${S.mad}] -> ${w?'Locura '+S.mad+'>'+(S.mad-1):'sin efecto'}`);if(w)sm(S.mad-1)}
+function rt(){document.querySelectorAll('[data-a=tg]').forEach(b=>{const k=b.dataset.k;b.classList.toggle('on',!!T[k]);b.classList.toggle('dim',!!T.x&&(k=='h'||k=='o'))})}
+const tg=k=>{T[k]=T[k]?0:1;rt()};
+function roll(rep){if(S.ret)return toast('El investigador está retirado');const m=T.m||T.x,h=T.x?0:T.h,o=T.x?0:T.o;if(!h&&!o&&!m)return toast('Activa al menos un dado');
+const ds=[];if(h)ds.push({v:d6(),k:'h'});if(o)ds.push({v:d6(),k:'o'});if(m)ds.push({v:d6(),k:'m'});
+const best=Math.max(...ds.map(x=>x.v)),md=ds.find(x=>x.k=='m'),trig=md&&ds.filter(x=>x.k!='m').every(x=>md.v>x.v),rd=(T.inv?RI:RA)[best-1];
+last={best,inv:T.inv,nec:T.nec};let tp=0;
+$('#rs').innerHTML=`<div class="dr">${ds.map(x=>`<div class="die ${x.k=='m'?'m':''} ${x.v==best&&!tp++?'top':''}" title="${N[x.k]}">${x.v}</div>`).join('')}</div><b>${best}: ${rd}</b>${trig?'<p class="mu">El dado de Locura es el más alto: tirada de Locura.</p>':''}`;
+lg('d',`${rep?'Repetición: ':''}${T.inv?'Investigación':'Acción'} [${ds.map(x=>N[x.k]+' '+x.v).join(', ')}] -> ${best}, ${rd}`);if(trig)mc()}
+function fl(){if(!last)return toast('Haz primero una tirada');if(last.inv&&last.nec)return toast('No puedes fallar: necesitas éxito para avanzar');$('#ff').hidden=false;$('#fd').focus()}
+function fr(){const t=$('#fd').value.trim(),o=d6(),f=o>last.best;lg('d',`Fallo propuesto${t?' "'+t+'"':''} [oposición ${o} vs ${last.best}] -> ${f?'fallas como se describe':'tienes éxito, mejor dado '+last.best}`);$('#ff').hidden=true;$('#fd').value=''}
+const MA='El Loco;Un salto al vacío, inocencia o imprudencia|El Mago;Voluntad y recursos para actuar|La Sacerdotisa;Secretos y saber oculto|La Emperatriz;Abundancia, fertilidad y cuidado|El Emperador;Autoridad, orden y control|El Hierofante;Tradición, dogma e instituciones|Los Enamorados;Una elección que compromete|El Carro;Avance decidido y victoria por voluntad|La Fuerza;Dominio sereno de los impulsos|El Ermitaño;Soledad y búsqueda interior|La Rueda de la Fortuna;El destino gira, cambio inevitable|La Justicia;Consecuencias, equilibrio y verdad|El Colgado;Suspensión, sacrificio y otra perspectiva|La Muerte;Un final que abre otra etapa|La Templanza;Equilibrio, paciencia y mezcla|El Diablo;Ataduras, tentación y obsesión|La Torre;Ruina repentina y revelación brutal|La Estrella;Esperanza y calma tras la tormenta|La Luna;Ilusión, miedo y lo que se oculta|El Sol;Claridad, alegría y éxito|El Juicio;Llamada, balance y renacer|El Mundo;Culminación y cierre completo'.split('|').map(s=>s.split(';'));
+const RK=['As','2','3','4','5','6','7','8','9','10','Sota','Caballero','Reina','Rey'],SU=[
+['Bastos','Chispa de una nueva empresa|Planear y elegir rumbo|Expansión, esperas resultados|Celebración y hogar estable|Rivalidad y choque de intereses|Victoria y reconocimiento|Defender tu posición|Rapidez, noticias que llegan|Cansancio, resistes sin fuerzas|Una carga excesiva|Mensaje o impulso nuevo|Precipitación y ardor|Carisma y confianza|Liderazgo visionario'],
+['Copas','Un sentimiento nuevo brota|Vínculo y unión mutua|Celebración compartida|Apatía, ignoras una oferta|Pérdida y duelo, aún queda algo|Nostalgia y recuerdos de infancia|Ilusiones y demasiadas opciones|Abandonas lo que ya no llena|Deseo cumplido y satisfacción|Armonía plena en el hogar|Intuición, mensaje afectivo|Propuesta romántica o idealista|Empatía y sensibilidad|Dominio emocional'],
+['Espadas','Verdad que corta, claridad mental|Indecisión y bloqueo|Dolor y traición|Reposo forzoso, tregua|Victoria hueca, conflicto sucio|Travesía hacia aguas más calmas|Engaño, sigilo y huida|Atrapado y sin salida|Angustia nocturna y pesadillas|Fin doloroso, hecho consumado|Curiosidad y vigilancia|Ataque impulsivo con palabras|Juicio frío y claro|Autoridad intelectual y ley'],
+['Oros','Oportunidad material|Equilibrar recursos|Trabajo en equipo y oficio|Aferrarse y acaparar|Miseria y exclusión|Dar y recibir con generosidad|Esperar el fruto con paciencia|Dedicación al oficio|Autonomía y comodidad lograda|Herencia y legado familiar|Estudio y oportunidad práctica|Constancia y lentitud metódica|Cuidado práctico y abundancia|Prosperidad y solidez']];
+const DK=[...MA,...SU.flatMap(([s,m])=>m.split('|').map((x,i)=>[RK[i]+' de '+s,x]))];
+const shuf=()=>{const a=[...DK.keys()];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+const rd2=()=>{$('#om').textContent=(S.dk?S.dk.length:78)+' cartas en el mazo'};
+function sh(){S.dk=shuf();lg('note','Se baraja el mazo de tarot');rd2()}
+function orc(){const q=$('#oq').value.trim();if(!S.dk||!S.dk.length){S.dk=shuf();if(S.log.length)lg('note','Se baraja el mazo de tarot')}
+const [n,m]=DK[S.dk.pop()];if(q)lg('q',q);lg('a',`${n}: ${m}`);$('#oq').value='';$('#oc').innerHTML=`<b>${esc(n)}</b><span>${esc(m)}</span>`;rd2()}
+function addLog(){let t=$('#li').value.trim(),y=$('#ty').value;const m=t.match(/^(@|\?|->|=>|d:)\s*/),Y={'@':'act','?':'q','->':'a','=>':'gm','d:':'d'};if(m){y=Y[m[1]];t=t.slice(m[0].length)}if(!t)return;if(y=='sc'){S.sc++;lg('sc',`S${S.sc} *${t}*`)}else lg(y,t);$('#li').value=''}
+const wg=(c,i)=>{let s='';for(let k=0;k<c.s;k++){const a=k/c.s*6.2832-1.5708,b=(k+1)/c.s*6.2832-1.5708,X=(t,r)=>(r*Math.cos(t)).toFixed(1),Y=(t,r)=>(r*Math.sin(t)).toFixed(1);
+s+=(c.s==1?'<circle r="30"':`<path d="M0 0L${X(a,30)} ${Y(a,30)}A30 30 0 0 1 ${X(b,30)} ${Y(b,30)}Z"`)+` class="w${k<c.f?' f':''}" data-i="${i}" data-k="${k}"/>`}return s};
+function rc(){$('#ck').innerHTML=S.clk.length?S.clk.map((c,i)=>`<div class="ck"><svg viewBox="-34 -34 68 68" width="64" height="64">${wg(c,i)}</svg><div><b>${esc(c.n)}</b> ${c.f}/${c.s}<br><button data-a="ckm" data-i="${i}" aria-label="Vaciar una sección">−</button><button data-a="ckp" data-i="${i}" aria-label="Llenar una sección">+</button><button data-a="ckx" data-i="${i}" aria-label="Borrar reloj">✕</button></div></div>`).join(''):'<p class="mu">Crea un reloj para llevar la cuenta de una amenaza.</p>'}
+function cf(i,f){const c=S.clk[i];if(!c)return;c.f=Math.max(0,Math.min(c.s,f));lg('clk',`[Clock: ${c.n} ${c.f}/${c.s}]`);rc()}
+function addck(){const n=$('#cn').value.trim(),s=Math.max(2,Math.min(12,+$('#cs').value||4));if(!n)return toast('Ponle un nombre al reloj');S.clk.push({n,s,f:0});$('#cn').value='';lg('clk',`[Clock: ${n} 0/${s}]`);rc()}
+function sdr(){$('#sd').innerHTML=`<div class="sr mu"><span>Bando</span><span>Dados</span><span>Locura</span><span>Dado verde</span></div>`+SD.map((s,i)=>`<div class="sr"><input data-i="${i}" data-f="n" value="${esc(s.n)}"><select data-i="${i}" data-f="c">${[1,2,3].map(v=>`<option${v==s.c?' selected':''}>${v}</option>`).join('')}</select><input type="number" min="1" max="6" data-i="${i}" data-f="m" value="${s.m}"><input type="checkbox" data-i="${i}" data-f="e"${s.e?' checked':''}></div>`).join('')}
+function cm(){SD[0].m=S.mad;op(`<h2>Cooperar o competir</h2><div id="sd"></div><button data-a="addsd">Añadir bando</button><div><button data-a="coop">Cooperar</button><button data-a="comp">Competir</button><button data-a="keep">Cerrar</button></div><p class="mu">Con el dado verde activado, el último dado del bando es el de Locura. El primer bando salta a tu Locura real.</p><div id="cr"></div>`);sdr()}
+function cc(mode){let R,n=0;do{R=SD.map(s=>{const ds=Array.from({length:s.c},d6),md=s.e?ds[ds.length-1]:0;return{s,ds,b:Math.max(...ds),t:s.e&&ds.slice(0,-1).every(v=>md>v)}});if(mode=='k')break;
+const mx=Math.max(...R.map(r=>r.b)),t1=R.filter(r=>r.b==mx);if(t1.length==1)break;const mm=Math.max(...t1.map(r=>r.s.m));if(t1.filter(r=>r.s.m==mm).length==1)break}while(++n<20);
+const det=R.map(r=>`${r.s.n} ${r.ds.join(',')}`).join(' | '),mx=Math.max(...R.map(r=>r.b));let out;
+if(mode=='k')out=`mejor dado ${mx}`;else{const t1=R.filter(r=>r.b==mx),mm=Math.max(...t1.map(r=>r.s.m));out=`gana ${t1.find(r=>r.s.m==mm).s.n} (${mx})`}
+lg('d',`${mode=='k'?'Cooperar':'Competir'} [${det}] -> ${out}`);$('#cr').innerHTML=`<p><b>${esc(det)}</b><br>${esc(out)}</p>`;
+R.forEach((r,i)=>{if(r.t){if(i==0)mc();else lg('note',`${r.s.n}: salta tirada de Locura`)}})}
+function md(){const F='`'.repeat(3),L=t=>t.split('\n').map(x=>x.trim()).filter(Boolean).map(x=>{const i=x.search(/\s[-–—]\s|:\s/),nm=i<0?x:x.slice(0,i),r=i<0?'':x.slice(i).replace(/^\s*[-–—:]\s*/,'');return`- [[${nm}]]${r?' — '+r:''}`}).join('\n')||'- (vacío)';
+const p=S.pc;return`---\ntags: [cthulhu-dark, lonelog]\nfecha: ${new Date().toISOString().slice(0,10)}\n---\n# ${p.n||'Investigador'}\n\n**Ocupación:** ${p.o||'-'}\n**Locura:** ${S.mad}/6${S.ret?' (retirado)':''}\n\n${p.d||''}\n\n## Relojes\n${S.clk.map(c=>`- ${c.n}: ${'▰'.repeat(c.f)}${'▱'.repeat(c.s-c.f)} (${c.f}/${c.s})`).join('\n')||'- (ninguno)'}\n\n## Personajes\n${L(S.nt.p)}\n\n## Lugares\n${L(S.nt.l)}\n\n## Objetos\n${L(S.nt.o)}\n\n## Diario\n${F}lonelog\n${S.log.map(e=>P[e.t]?P[e.t]+' '+e.x:e.x).join('\n')}\n${F}\n`}
+function exp(){op(`<h2>Exportar a Markdown</h2><p class="mu">Copia el texto y pégalo en una nota nueva de Obsidian.</p><textarea id="mt" rows="14" readonly style="font:12px var(--fm)">${esc(md())}</textarea><button data-a="cp">Copiar</button><button data-a="keep">Cerrar</button>`);$('#mt').select()}
+function cp(){const t=$('#mt');t.select();try{navigator.clipboard.writeText(t.value)}catch(e){}try{document.execCommand('copy')}catch(e){}toast('Texto seleccionado y copiado')}
+const help=()=>op(`<h2>Atajos de teclado</h2><p><kbd>1</kbd> <kbd>2</kbd> <kbd>3</kbd> dados humano, ocupación y Locura<br><kbd>X</kbd> fuera de lo humano · <kbd>I</kbd> investigación · <kbd>N</kbd> necesaria para avanzar<br><kbd>R</kbd> o <kbd>Enter</kbd> tirar · <kbd>⇧R</kbd> repetir · <kbd>F</kbd> proponer fallo<br><kbd>L</kbd> tirada de Locura · <kbd>K</kbd> eliminar conocimiento · <kbd>M</kbd> cooperar o competir<br><kbd>A</kbd> @ acción · <kbd>Q</kbd> ? pregunta · <kbd>W</kbd> -> resultado · <kbd>C</kbd> => consecuencia · <kbd>D</kbd> d: dado<br><kbd>S</kbd> escena · <kbd>T</kbd> nota · <kbd>O</kbd> sacar carta · <kbd>B</kbd> nuevo reloj<br><kbd>E</kbd> exportar · <kbd>Esc</kbd> cerrar</p><button data-a="keep">Cerrar</button>`);
+function nw(){const b=$('#nw');if(!cfm){cfm=1;b.textContent='¿Seguro? Pulsa otra vez';setTimeout(()=>{cfm=0;b.textContent='Nuevo investigador'},3000);return}
+cfm=0;b.textContent='Nuevo investigador';S.pc={n:'',o:'',d:''};S.mad=1;S.r5=false;S.ret=false;lg('note','Nuevo investigador');fill();rm()}
+function fill(){$('#pn').value=S.pc.n;$('#po').value=S.pc.o;$('#pd').value=S.pc.d;$('#np').value=S.nt.p;$('#nl').value=S.nt.l;$('#no').value=S.nt.o}
+const A={roll:()=>roll(0),rep:()=>roll(1),fail:fl,fr,mc,kn,exp,help,cp,orc,sh,add:addLog,addck,cm,nw,keep:cl,
+coop:()=>cc('k'),comp:()=>cc('c'),addsd:()=>{SD.push({n:'Bando '+(SD.length+1),c:2,m:1,e:0});sdr()},
+ret:()=>{S.ret=true;lg('note','Investigador retirado: enloquece irremediablemente');cl();rm()}};
+document.addEventListener('click',e=>{const w=e.target.closest('.w');if(w){const i=+w.dataset.i,k=+w.dataset.k;cf(i,S.clk[i].f==k+1?k:k+1);return}
+const b=e.target.closest('[data-a]');if(!b)return;const a=b.dataset.a,i=+b.dataset.i;
+if(A[a])A[a]();else if(a=='tg')tg(b.dataset.k);else if(a=='sm')sm(+b.dataset.v);else if(a=='ckp')cf(i,S.clk[i].f+1);else if(a=='ckm')cf(i,S.clk[i].f-1);else if(a=='dx'){S.log.splice(i,1);save();rl(1)}else if(a=='ckx'){lg('note',`Reloj borrado: ${S.clk[i].n}`);S.clk.splice(i,1);rc()}});
+$('#md').addEventListener('change',e=>{const t=e.target,i=t.dataset.i;if(i==null)return;const f=t.dataset.f;SD[i][f]=f=='n'?t.value:f=='e'?t.checked:Math.max(1,Math.min(f=='m'?6:3,+t.value||1))});
+[['#pn','n'],['#po','o'],['#pd','d']].forEach(([s,k])=>$(s).oninput=e=>{S.pc[k]=e.target.value;save()});
+[['#np','p'],['#nl','l'],['#no','o']].forEach(([s,k])=>$(s).oninput=e=>{S.nt[k]=e.target.value;save()});
+const en=(s,f)=>$(s).addEventListener('keydown',e=>{if(e.key=='Enter'){e.preventDefault();f()}});en('#li',addLog);en('#oq',orc);en('#fd',()=>fr());en('#cn',addck);
+$('#lg').addEventListener('input',e=>{const t=e.target.closest('.tx');if(t){S.log[+t.dataset.i].x=t.textContent;save()}});
+$('#lg').addEventListener('keydown',e=>{if(e.key=='Enter'&&e.target.closest('.tx')){e.preventDefault();e.target.blur()}});
+$('#lg').addEventListener('focusout',e=>{const t=e.target.closest('.tx');if(t&&!t.textContent.trim()){S.log.splice(+t.dataset.i,1);save();rl(1)}});
+addEventListener('keydown',e=>{if(e.key=='Escape'){cl();document.activeElement.blur();return}
+if(/^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName)||e.target.isContentEditable||e.ctrlKey||e.metaKey||e.altKey)return;
+if(e.key=='Enter'){if(e.target.tagName!='BUTTON'&&$('#md').hidden){e.preventDefault();roll(0)}return}
+const k=e.key.toLowerCase(),f=(id,t)=>{e.preventDefault();if(t)$('#ty').value=t;$(id).focus()},M={'1':()=>tg('h'),'2':()=>tg('o'),'3':()=>tg('m'),x:()=>tg('x'),i:()=>tg('inv'),n:()=>tg('nec'),r:()=>roll(e.shiftKey),f:fl,l:mc,k:kn,m:cm,e:exp,'?':help,a:()=>f('#li','act'),q:()=>f('#li','q'),w:()=>f('#li','a'),c:()=>f('#li','gm'),d:()=>f('#li','d'),s:()=>f('#li','sc'),t:()=>f('#li','note'),o:()=>f('#oq'),b:()=>f('#cn')};
+if(M[k]){e.preventDefault();M[k]()}});
+fill();rm();rc();rl();rt();rd2();
+</script></body></html>
